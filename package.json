@@ -9,8 +9,10 @@
   "author": "somours",
   "license": "ISC",
   "dependencies": {
+    "busboy": "^0.2.14",
     "koa": "^2.6.2",
     "koa-bodyparser": "^3.2.0",
+    "koa-jsonp": "^2.0.2",
     "koa-static": "^5.0.0"
   }
 }
