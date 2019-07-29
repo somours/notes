@@ -137,3 +137,21 @@
 }
 ```
 
+### 宽度100%时设置图片为正方形，宽高相等
+```
+.div{
+    width:100%;
+    height:0px;
+    padding-bottom:100%;
+    position:relative;
+}
+.div img{
+        width:100%;
+        height:100%;
+        position:absolute;
+}
+<div class="div">
+    <img src="">
+</div>
+```
+
