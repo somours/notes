@@ -33,6 +33,11 @@ export const clickType = {
   default: 'default',
   close: 'close'
 }
+/* 下拉框配置 */
+export const selectConfig = {
+  clearable: true,
+  filterable: true
+}
 
 /* 请求时忽略值 */
 export const updateIgnoreKey = ['createTime', 'updateTime']
@@ -68,4 +73,10 @@ export const tableItemType = {
     pointerColorView: 'pointerColorView',
     jump: 'jump'
   }
+}
+export const error = (msg) => {
+  throw new Error(msg)
+}
+export const picturePath = (picturePath) => {
+  return picturePath
 }
