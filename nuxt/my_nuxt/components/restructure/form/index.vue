@@ -15,13 +15,14 @@
         <MyRender :item="item" :index="index" :value.sync="formData[item.key]" :formData="formData" />
       </div>
     </el-form-item>
-    <slot name="formContainer"></slot>
+    <slot name="formContainer" />
   </el-form>
 </template>
 
 <script>
 import MyRender from './render/index.vue'
 import { regular } from '@/utils/validate'
+import { keyWord } from '@/utils/config'
 export default {
   name: 'MyForm',
   component: {
@@ -51,15 +52,34 @@ export default {
   },
   data () {
     return {
-      trigger: 'blur'
+      trigger: 'blur',
+      resFormData: {}
     }
   },
   methods: {
+    dealFormData (fn) { // 处理formData, 初始化及显示值 fn作为处理list的请求
+      const tempObj = {}
+      this.formLists.forEach((item, index) => {
+        if (!item.slot && this.basics.isNull(item.key)) {
+          const key = item.key
+          item.value = this.setItemValue(item)
+        }
+      })
+    },
+    setItemValue (item) {
+      let res
+      if (item.type.includes(keyWord.multiple) && this.basics.isString(item.value)) {
+        res = item.value.split(keyWord.relatedWords)
+      } else {
+        res = item.value || ''
+      }
+      return res
+    },
     getRegular (item, index) {
       const ret = []
       return ret
     },
-    setRegular (regArr) {
+    setRegular (regArr) { // 设置每一项列表的正则
       return regArr.map((item) => {
         if (this.basics.isObj(item)) {
           return item
