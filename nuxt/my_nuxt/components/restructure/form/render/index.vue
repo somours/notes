@@ -1,27 +1,49 @@
 <template>
   <div class="my-render">
-    自定义render渲染
-    <MyInput v-model="testVal" :item="item" />
-    <MySelect v-model="testSelect" :item="selectItem" />
+    <MyTemplate v-if="item.render" :render="item.render" :data="{data:{row: formData}}" />
+    <div class="inline-blcok">
+      <MyInput v-if="item.type === formItemType.input" v-model="getVal" :item="item" />
+      <MySelect v-if="item.type === formItemType.select || item.type === formItemType.selectMultiple" v-model="getVal" :item="item" />
+    </div>
+    <!--自定义render渲染
+    <MyInput v-model="testVal" :item="inputItem" />
+    <MySelect v-model="testSelect" :item="selectItem" />-->
   </div>
 </template>
 
 <script>
-import { MyInput, MySelect } from './index'
+import { MySelect, MyInput, MyTemplate } from './render'
 import { formItemType } from '@/utils/config'
 export default {
   name: 'Index',
   components: {
     MyInput,
-    MySelect
+    MySelect,
+    MyTemplate
   },
   props: {
-
+    item: { // 列表的每一项数据
+      type: Object,
+      default: () => ({})
+    },
+    index: { // 索引
+      type: [Number, String],
+      default: ''
+    },
+    formData: { // 表单的数据
+      type: Object,
+      default: () => {}
+    },
+    value: {
+      type: [Number, String, Array],
+      default: ''
+    }
   },
   data () {
     return {
+      formItemType,
       testVal: '',
-      item: {
+      inputItem: {
         key: 'test',
         title: '测试'
       },
@@ -37,6 +59,18 @@ export default {
         ]
       }
     }
+  },
+  computed: {
+    getValue: {
+      get () {
+        return this.value
+      },
+      set (newValue) {
+        this.$emit('update:value', newValue)
+      }
+    }
+  },
+  methods: {
   }
 }
 </script>

@@ -1,6 +1,7 @@
 import Vue from 'vue'
+// formItemType, tableItemType,
 import basics from '@/utils/libs/basics'
-import { selectConfig, keyWord } from '@/utils/config' // formItemType, tableItemType,
+import { selectConfig, keyWord } from '@/utils/config'
 
 const commonProps = {
   item: {
@@ -33,6 +34,13 @@ export const listSerialize = (list, format, callback) => {
   })
 }
 
+/**
+ * @description: 用于最外层的手写render函数,
+ * @author:somours
+ * @date:2019/12/31
+ * @param: createElement为Vue的render函数里的创建函数,data为传入的对象
+ * @return: render
+*/
 // 手写的render函数
 export const MyTemplate = Vue.component('MyTemplate', {
   props: {
@@ -56,7 +64,7 @@ export const MyTemplate = Vue.component('MyTemplate', {
  * @param:
  * @return:
 */
-const basicsRender = (name, options = () => ({}), childrenNode = () => false) => {
+export const basicsRender = (name, options = () => ({}), childrenNode = () => false) => {
   return {
     props: commonProps,
     render (h) {
@@ -134,6 +142,26 @@ export const MySelect = Vue.component('MySelect', basicsRender('el-select', (vm)
     }
   })
 })))
+// 单选框 radio
+export const MyRadio = Vue.component('MyRadio', basicsRender('el-radio-group', '', (vm, h, list, format) => listSerialize(list, format, (item) => {
+  return h('el-radio', { // el-radio上的label是value值,显示内容在标签内
+    props: {
+      key: item.value,
+      label: item.value,
+      disabled: item.disabled
+    }
+  }, item.label)
+})))
+// 复选框 checkbox
+export const MyCheckbox = Vue.component('MyCheckbox', basicsRender('el-checkbox-group', '', (vm, h, list, format) => listSerialize(list, format, (item) => {
+  return h('el-checkbox', {
+    props: {
+      key: item.value,
+      label: item.value,
+      disabled: item.disabled
+    }
+  }, item.label)
+})))
 // 日期选择 (单个)
 export const MyDatePicker = Vue.component('MyDatePicker', basicsRender('el-date-picker', (vm) => {
   const options = vm.item.options || {}
@@ -192,4 +220,24 @@ export const MyDatePickerDouble = Vue.component('MyDatePickerDouble', basicsRend
       }
     })
   ]
+}))
+
+// 开关 switch
+export const MySwitch = Vue.component('MySwtich', basicsRender('el-switch', (vm) => {
+  const on = getOptionsAttr(vm, 'on')
+  if (on.input) {
+    if (!basics.isNull(vm.value)) {
+      on.input(String(vm.value))
+    }
+  }
+  return {
+    props: {
+      value: basics.isNull(vm.value) ? '' : String(vm.value)
+    },
+    on: {
+      'change': (newValue) => {
+        vm.$emit('input', newValue)
+      }
+    }
+  }
 }))

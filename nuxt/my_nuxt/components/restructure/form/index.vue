@@ -7,20 +7,21 @@
     :inline="inline"
     class="my-ruleForm"
   >
-    <el-form-item v-for="(item, index) in formLists" :key="index" :label="item.title" :prop="item.key" :rules="getRegular(item, index)" >
+    <el-form-item v-for="(item, index) in formLists" :key="index" :label="item.title" :prop="item.key" :rules="getRegular(item, index)">
       <div v-if="item.slot" :slot="item.slot">
-        <slot :name="item.slot"></slot>
+        <slot :name="item.slot" />
       </div>
       <div v-else>
-        <MyRender :item="item" :index="index" :val.sync="formData[item.key]" :formData="formData"></MyRender>
+        <MyRender :item="item" :index="index" :value.sync="formData[item.key]" :formData="formData" />
       </div>
     </el-form-item>
+    <slot name="formContainer"></slot>
   </el-form>
 </template>
 
 <script>
+import MyRender from './render/index.vue'
 import { regular } from '@/utils/validate'
-import MyRender from './render/index'
 export default {
   name: 'MyForm',
   component: {

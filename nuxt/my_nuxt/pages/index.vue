@@ -2,14 +2,30 @@
   <div class="container">
     test
     <TestRender />
+    <MyDialog :dialog-visible.sync="dialogVisible" :data="dialogData">
+      TEST DIALOG
+    </MyDialog>
+    <el-button @click="dialogVisible = true" type="primary">
+      弹窗
+    </el-button>
   </div>
 </template>
 
 <script>
 import TestRender from '@/components/restructure/form/render/index.vue'
+import MyDialog from '@/components/restructure/dialog/index.vue'
 export default {
   components: {
-    TestRender
+    TestRender,
+    MyDialog
+  },
+  data () {
+    return {
+      dialogVisible: false,
+      dialogData: {
+        title: 'hahaha'
+      }
+    }
   }
 }
 </script>
