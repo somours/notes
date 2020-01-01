@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let test = function () {
+      console.log(this)
+    }
+    test()
+    let obj1 = {
+      a: 1,
+      b: () => {
+        // console.log(this)
+        return this.a + 1
+      },
+      c() {
+        // console.log(this)
+        return this.a + 1
+      }
+    }
+    console.log(obj1.b())
+    console.log(obj1.c())
+  </script>
+</body>
+
+</html>
