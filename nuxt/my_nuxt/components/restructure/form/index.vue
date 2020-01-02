@@ -2,18 +2,20 @@
   <el-form
     ref="ruleForm"
     :size="size"
-    :model="formData"
+    :model="resFormData"
     :label-width="labelWidth"
     :inline="inline"
     class="my-ruleForm"
   >
     <el-form-item v-for="(item, index) in formLists" :key="index" :label="item.title" :prop="item.key" :rules="getRegular(item, index)">
-      <div v-if="item.slot" :slot="item.slot">
-        <slot :name="item.slot" />
-      </div>
-      <div v-else>
-        <MyRender :item="item" :index="index" :value.sync="formData[item.key]" :formData="formData" />
-      </div>
+      <template v-if="basics.isNull(item.showState) ? true : item.showState">
+        <div v-if="item.slot" :slot="item.slot">
+          <slot :name="item.slot" />
+        </div>
+        <div v-else>
+          <MyRender :item="item" :index="index" :value.sync="resFormData[item.key]" :formData="resFormData" />
+        </div>
+      </template>
     </el-form-item>
     <slot name="formContainer" />
   </el-form>
@@ -23,9 +25,11 @@
 import MyRender from './render/index.vue'
 import { regular } from '@/utils/validate'
 import { keyWord } from '@/utils/config'
+import { deepClone } from '@/utils/index'
+
 export default {
   name: 'MyForm',
-  component: {
+  components: {
     MyRender
   },
   props: {
@@ -41,11 +45,11 @@ export default {
       type: Boolean,
       default: false
     },
-    formData: {
+    formData: { // 初始化值, 回显值
       type: Object,
       default: () => ({})
     },
-    formLists: {
+    formLists: { // 表格每一项的配置列表
       type: Array,
       default: () => []
     }
@@ -56,37 +60,94 @@ export default {
       resFormData: {}
     }
   },
+  mounted () {
+    this.dealFormData((item, index) => {
+      if (item.requestList) {
+        item.list = []
+        this.requestListApi(item, index)
+      }
+    })
+  },
   methods: {
+    requestListApi (item, index) { // 一般下拉框列表的请求
+      item.requestList().then((res) => {
+        this.$set(this.formLists[index], 'list', res) // 不知道这里可以直接赋值不
+      })
+    },
     dealFormData (fn) { // 处理formData, 初始化及显示值 fn作为处理list的请求
       const tempObj = {}
       this.formLists.forEach((item, index) => {
-        if (!item.slot && this.basics.isNull(item.key)) {
-          const key = item.key
+        if (!item.slot && !this.basics.isNull(item.key)) { // key值不能为空
           item.value = this.setItemValue(item)
+          item.list = item.list ? item.list : this.$set(this.formLists[index], 'list', []) // 在render里面好像有list处理
+          item.$index = index
+          const key = item.key
+          if (this.basics.isNull(this.formData[key]) && (this.basics.isArray(this.formData[key]) && this.basics.isArrNull(this.formData[key]))) {
+            tempObj[key] = this.basics.isNull(item.value) ? '' : item.value
+          } else {
+            tempObj[key] = this.formData[key] || ''
+          }
         }
+        if (fn) { fn(item, index) }
       })
+      this.resFormData = tempObj
     },
     setItemValue (item) {
       let res
       if (item.type.includes(keyWord.multiple) && this.basics.isString(item.value)) {
         res = item.value.split(keyWord.relatedWords)
       } else {
-        res = item.value || ''
+        res = !this.basics.isNull(item.value) ? item.value : ''
       }
       return res
     },
-    getRegular (item, index) {
-      const ret = []
+    getRegular (item) { // 获取每一项的正则规则
+      let ret = []
+      const { reg } = item
+      if (this.basics.isString(reg)) {
+        ret = this.setRegular([reg], item)
+      } else if (this.basics.isArray(reg)) {
+        ret = this.setRegular(reg, item)
+      }
+      console.log('value', item.value)
       return ret
     },
-    setRegular (regArr) { // 设置每一项列表的正则
-      return regArr.map((item) => {
-        if (this.basics.isObj(item)) {
-          return item
+    setRegular (regArr, item) { // 设置每一项列表的正则
+      const title = item.title || item.regTitle || '此项'
+      return regArr.map((regItem) => {
+        if (this.basics.isObj(regItem)) {
+          return regItem
         } else {
-          if (item === 'required') { return { required: true, message: '此项不能为空', trigger: this.trigger } }
-          return { trigger: this.trigger, validator: regular(item) }
+          if (regItem === 'required') { return { required: true, message: `${title}不能为空`, trigger: this.trigger } }
+          return { trigger: this.trigger, validator: regular(regItem) }
         }
+      })
+    },
+    resetForm (formName = 'ruleForm') { // 重置表单
+      this.$refs[formName].resetFields()
+    },
+    validateForm (formName = 'ruleForm') { // 验证表单
+      console.log(this.resFormData)
+      return new Promise((resolve, reject) => {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            const resultFormData = deepClone(this.resFormData)
+            this.formLists.forEach((item, index) => {
+              const key = item.key
+              const keyValue = resultFormData[key]
+              if (item.childKey && this.basics.isArray(item.childKey)) {
+                item.childKey.forEach((childItem, childIndex) => {
+                  resultFormData[childItem] = keyValue[childIndex] || ''
+                })
+              } else if (this.basics.isArray(keyValue)) {
+                resultFormData[key] = keyValue.join(keyWord.relatedWords)
+              }
+            })
+            resolve(resultFormData)
+          } else {
+            reject(new Error('表单错误'))
+          }
+        })
       })
     }
   }

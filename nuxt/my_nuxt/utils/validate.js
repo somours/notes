@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const commonReg = (reg, msg) => {
   return (rule, value, callback) => {
     if (!(reg.test(value))) {

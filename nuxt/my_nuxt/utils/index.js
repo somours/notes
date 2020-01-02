@@ -65,3 +65,26 @@ export const filterEnums = (value, enums) => {
     }
   }
 }
+
+/**
+ * @description: 获取对象里的值
+ * @author:somours
+ * @date:2020/1/2
+ * @param: obj要枚举的独享
+ * @param: key为对象里的key值 (可以key.key的形式)
+ * @param: standBy 占位符
+ * @return: obj[key]
+*/
+
+export const getObjKey = (key, obj, standBy = '-') => {
+  let ret = standBy
+  if (basics.isNull(key)) {
+    return ret
+  }
+  const tempArr = key.split('.')
+  const tempKey = tempArr[tempArr.length - 1]
+  if (obj.hasOwnProperty(tempKey) && !basics.isNull(obj[tempKey])) {
+    ret = obj[tempKey]
+  }
+  return ret
+}
