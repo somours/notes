@@ -1,21 +1,29 @@
 <template>
   <div>
-    <span v-for="(i,$index) in fliterActiveType" v-if="showOrHidden(i,params)" class="activeButton">
-      <el-button
-        :size="i.size"
-        :type="i.theme"
-        :icon="otherOrFn(i.icon,fliterActiveType[$index])"
-        :disabled="basics.isFunction(i.disabled)?i.disabled(params):i.disabled"
-        @click="i.click($index,fliterActiveType[$index],params,index,vm)"
-      >{{ otherOrFn(i.text,fliterActiveType[$index]) }}</el-button>
-    </span>
+    <template v-for="(item, index) in activeTypeList" :key="index">
+      <div v-if="showOrHidden(item,row)" class="activeButton">
+        <el-button
+          :size="item.size"
+          :type="item.theme"
+          :icon="otherOrFn(item.icon, item)"
+          :disabled="basics.isFunction(item.disabled) ? item.disabled(row) : item.disabled"
+          @click="item.click(index,item,row,vm)"
+        >{{ otherOrFn(item.text, item) }}</el-button>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import { tableItemType, error } from '@/utils/config'
-import { copy } from '@/utils/libs/basicsMethods'
-
+import { deepClone } from '@/utils/index'
+const basicsButtonConfig = {
+  text: '默认配置',
+  click: () => {
+  },
+  theme: 'primary',
+  size: 'mini'
+}
 export default {
   name: 'Index',
   props: {
@@ -23,12 +31,12 @@ export default {
       type: Array,
       default: () => [tableItemType.activeType.detailsDialog, tableItemType.activeType.delete]
     },
-    params: {
+    row: {
       type: Object,
       default: () => {
       }
     },
-    index: {
+    index: { // 外面的index,暂时没用到
       type: Number,
       default: 0
     }
@@ -46,13 +54,12 @@ export default {
       },
       [tableItemType.activeType.dialog]: {
         text: '弹窗',
-        click: ($index, i, params, index) => {
-          if (this.basics.isNull(i.key)) { error('key Can not be empty') }
+        click: (index, item, params, vm) => {
+          if (this.basics.isNull(item.key)) { error('key Can not be empty') }
           this.$emit('dialog', {
-            key: i.key,
-            $index,
-            params,
-            index
+            key: item.key,
+            index,
+            params
           })
         },
         theme: 'primary',
@@ -68,18 +75,11 @@ export default {
       },
       [tableItemType.activeType.newWin]: {
         text: '跳转',
-        click: ($index, item, params) => {
+        click: (index, item, row) => {
           this.$router.push({
             path: item.path || '/',
-            query: item.setQuery ? item.setQuery(params) : {}
+            query: item.setQuery ? item.setQuery(row) : {}
           })
-        },
-        theme: 'primary',
-        size: 'mini'
-      },
-      basicsButtonConfig: {
-        text: '默认配置',
-        click: () => {
         },
         theme: 'primary',
         size: 'mini'
@@ -87,9 +87,10 @@ export default {
     }
   },
   computed: {
-    fliterActiveType () {
-      return copy(this.activeType).map((item) => {
-        if (item.load) { item.load.apply(this, [item, this.params]) }
+    activeTypeList () {
+      const activeType = deepClone(this.activeType)
+      return activeType.map((item) => {
+        // if (item.load) { item.load.apply(this, [item, this.row]) }
         return this.getActiveType(item)
       })
     }
@@ -100,19 +101,23 @@ export default {
       let type = ''
       if (this.basics.isString(activeItem)) {
         type = activeItem
-      } else if (this.basics.isObj(activeItem)) { type = activeItem.type }
+      } else if (this.basics.isObj(activeItem)) {
+        type = activeItem.type
+      }
       return {
-        ...this.basicsButtonConfig,
-        ...this[type] ? this[type] : {},
-        ...this.basics.isFunction(activeItem) ? activeItem(this.params) : (this.basics.isObj(activeItem) ? activeItem : {})
+        basicsButtonConfig,
+        ...this[type] ? this[type] : {}
+        // ...this.basics.isFunction(activeItem) ? activeItem(this.params) : (this.basics.isObj(activeItem) ? activeItem : {})
       }
     },
-    otherOrFn (data, that) {
+    // 文本以及Icon的传入显示,可直接字符串,以及函数
+    otherOrFn (data, activeTypeItem) {
       if (this.basics.isFunction(data)) {
-        return data(this.params, that)
+        return data(this.row, activeTypeItem)
       }
       return data
     },
+    // 控制button的显示与否,
     showOrHidden (item, params) {
       if (!this.basics.isNull(item.hidden)) { /* false */
         const hidden = item.hidden
@@ -135,8 +140,8 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   .activeButton {
+    display: inline-block;
     margin-right: 10px;
-
     &:last-child {
       margin: 0;
     }

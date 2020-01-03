@@ -16,5 +16,6 @@ module.exports = {
     'nuxt/no-cjs-in-config': 'off',
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "space-infix-ops": ["warn", {"int32Hint": false}]
+    // "no-multiple-empty-lines": ["warn", { "max": 2, "maxBOF": 1}
   }
 }

@@ -77,6 +77,8 @@ export const tableItemType = {
 export const error = (msg) => {
   throw new Error(msg)
 }
-export const picturePath = (picturePath) => {
-  return picturePath
+// 表格的每页条数,及当前页
+export const tableInfo = {
+  pageSize: 10,
+  pageNum: 1
 }

@@ -76,7 +76,7 @@ export const filterEnums = (value, enums) => {
  * @return: obj[key]
 */
 
-export const getObjKey = (key, obj, standBy = '-') => {
+export const getObjKeyValue = (key, obj, standBy = '-') => {
   let ret = standBy
   if (basics.isNull(key)) {
     return ret
@@ -87,4 +87,33 @@ export const getObjKey = (key, obj, standBy = '-') => {
     ret = obj[tempKey]
   }
   return ret
+}
+/**
+ * 图片路劲
+ * */
+export const picturePath = (picturePath) => {
+  return picturePath
+}
+/**
+ * @desc:删除提示框
+ * @author:somours
+ * @param:vm this
+ * @return:Promise
+ */
+export const delectConfirm = (vm) => {
+  return new Promise((resolve, reject) => {
+    vm.$confirm('此操作将永久删除, 是否继续?', '提示', {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }).then(() => {
+      resolve()
+    }).catch(() => {
+      reject(new Error(''))
+      vm.$message({
+        type: 'info',
+        message: '已取消删除'
+      })
+    })
+  })
 }
