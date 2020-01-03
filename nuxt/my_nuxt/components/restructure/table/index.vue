@@ -42,12 +42,13 @@
               <MyTemplate v-if="item.render" :render="item.render" :data="{data: scope, column: item}" />
               <template v-else>
                 <div v-if="itemTypeIsActive(item)">
-                  <TableButton :row="scope.row"
-                               :index="scope.$index"
-                               :activeType="item.activeType"
-                               @deleActive="deleteActive(scope.row, scope.$index)"
-                               @getById="getById(scope.row)"
-                               @dialog="dialog"
+                  <TableButton
+                    :row="scope.row"
+                    :index="scope.$index"
+                    :activeType="item.activeType"
+                    @deleActive="deleteActive(scope.row, scope.$index)"
+                    @getById="getById(scope.row)"
+                    @dialog="dialog"
                   />
                 </div>
                 <div v-else-if="item.tableView">

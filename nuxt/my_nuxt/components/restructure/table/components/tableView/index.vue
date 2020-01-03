@@ -16,13 +16,14 @@
       <el-tag :type="column.tagState[String(data[column.key])]">{{getText(column)}}</el-tag>
     </span>-->
     <span @click="handleClick" v-if="column.tableView===tableView.date">{{getObjKeyValue(data,column.key), ((column.options&&column.options.format)||'yyyy-MM-dd hh:mm:ss') | parseTimeTwo}}</span>
-<!--    <span @click="handleClick" v-if="column.tableView===tableView.colorView||column.tableView===tableView.pointerColorView" :style="getStyle">{{ basics.isNull(data[column.key])?((column.options&&column.options.alternate)||'-'):data[column.key] }}</span>-->
+    <!--    <span @click="handleClick" v-if="column.tableView===tableView.colorView||column.tableView===tableView.pointerColorView" :style="getStyle">{{ basics.isNull(data[column.key])?((column.options&&column.options.alternate)||'-'):data[column.key] }}</span>-->
   </div>
 </template>
 
 <script>
 import { getObjKeyValue, picturePath } from '@/utils/index'
 import { tableItemType } from '@/utils/config'
+import { listSerialize } from '@/components/restructure/form/render/render'
 
 export default {
   name: 'Index',
@@ -65,10 +66,17 @@ export default {
   methods: {
     getText (column, callback) {
       let ret = '-'
-      if (this.basics.isNull(column.list)) { return ret }
-      const keyValue = this.data[column.key]
+      const lists = !this.basics.isArray(column.list) ? [] : column.list
       // 把表格的requestList放在这里处理感觉比较好 ??
-      const tmpObj = column.list.find((item) => {
+      if (column.requestList) {
+        column.requestList().then((res) => {
+          listSerialize(res, column.listFormat, (serializedItem) => {
+            lists[serializedItem.index] = serializedItem
+          })
+        })
+      }
+      const keyValue = this.data[column.key]
+      const tmpObj = lists.find((item) => {
         return String(item.value) === String(keyValue)
       })
       if (tmpObj) {
