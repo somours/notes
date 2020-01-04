@@ -2,12 +2,9 @@
   <div class="my-render">
     <MyTemplate v-if="item.render" :render="item.render" :data="{data:{row: formData}}" />
     <div class="inline-blcok">
-      <MyInput v-if="item.type === formItemType.input" v-model="getVal" :item="item" />
-      <MySelect v-if="item.type === formItemType.select || item.type === formItemType.selectMultiple" v-model="getVal" :item="item" />
+      <MyInput v-if="item.type === formItemType.input" v-model="getValue" :item="item" />
+      <MySelect v-if="item.type === formItemType.select || item.type === formItemType.selectMultiple" v-model="getValue" :item="item" />
     </div>
-    <!--自定义render渲染
-    <MyInput v-model="testVal" :item="inputItem" />
-    <MySelect v-model="testSelect" :item="selectItem" />-->
   </div>
 </template>
 
@@ -41,23 +38,7 @@ export default {
   },
   data () {
     return {
-      formItemType,
-      testVal: '',
-      inputItem: {
-        key: 'test',
-        title: '测试'
-      },
-      testSelect: '',
-      selectItem: {
-        key: 'selectTest',
-        title: '下拉框测试',
-        type: formItemType.select,
-        list: [
-          { value: 1, label: 'test1' },
-          { value: 2, label: 'test2' },
-          { value: 3, label: 'test3' }
-        ]
-      }
+      formItemType
     }
   },
   computed: {

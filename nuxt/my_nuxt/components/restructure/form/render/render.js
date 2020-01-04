@@ -26,11 +26,12 @@ const getOptionsAttr = (vm, attrName, type = {}) => {
 export const listSerialize = (list, format, callback) => {
   return list.map((item, index) => {
     const callbackObj = {
+      ...item,
       index,
       value: basics.isObj(format) ? String(item[format.value || 'value']) : String(item.value),
       label: basics.isObj(format) ? String(item[format.label || 'label']) : String(item.label)
     }
-    return callback ? callback(callbackObj) : {}
+    return callback ? callback(callbackObj) : callbackObj
   })
 }
 
@@ -125,6 +126,7 @@ export const MyInput = Vue.component('MyInput', basicsRender('el-input', () => {
 }))
 // 下拉框
 export const MySelect = Vue.component('MySelect', basicsRender('el-select', (vm) => {
+  console.log('vm', vm.value)
   return {
     props: {
       value: basics.isArray(vm.value) ? vm.value : String(vm.value),

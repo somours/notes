@@ -8,23 +8,76 @@
     <el-button @click="dialogVisible = true" type="primary">
       弹窗
     </el-button>
+    <MyForm ref="myForm" :form-lists="formLists" :form-data="formData" />
+    <el-button @click="save" type="primary">
+      保存表单
+    </el-button>
   </div>
 </template>
 
 <script>
 import TestRender from '@/components/restructure/form/render/index.vue'
 import MyDialog from '@/components/restructure/dialog/index.vue'
+import MyForm from '@/components/restructure/form/index.vue'
+import { formItemType } from '@/utils/config'
+const statusList = [{
+  value: '0',
+  label: '已申请'
+}, {
+  value: '100',
+  label: '已处理'
+}, {
+  value: '200',
+  label: '退单中'
+}, {
+  value: '300',
+  label: '已退单'
+}]
 export default {
   components: {
     TestRender,
-    MyDialog
+    MyDialog,
+    MyForm
   },
   data () {
     return {
       dialogVisible: false,
       dialogData: {
         title: 'hahaha'
+      },
+      formLists: [
+        {
+          key: 'id',
+          title: 'Id',
+          type: formItemType.input,
+          reg: ['required']
+        },
+        {
+          key: 'status',
+          title: '状态',
+          type: formItemType.select,
+          reg: ['required'],
+          list: statusList
+        },
+        {
+          key: 'name',
+          title: '姓名',
+          type: formItemType.input,
+          reg: 'required'
+        }
+      ],
+      formData: {
+        id: 1,
+        name: 'somours',
+        status: ''
       }
+    }
+  },
+  methods: {
+    save () {
+      this.$refs.myForm.validateForm().then((res) => {
+        console.log(res)
+      })
     }
   }
 }
