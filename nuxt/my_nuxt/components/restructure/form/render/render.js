@@ -126,7 +126,6 @@ export const MyInput = Vue.component('MyInput', basicsRender('el-input', () => {
 }))
 // 下拉框
 export const MySelect = Vue.component('MySelect', basicsRender('el-select', (vm) => {
-  console.log('vm', vm.value)
   return {
     props: {
       value: basics.isArray(vm.value) ? vm.value : String(vm.value),

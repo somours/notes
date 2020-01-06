@@ -15,7 +15,7 @@
     <!--<span @click="handleClick" v-if="column.tableView===tableView.tagState">
       <el-tag :type="column.tagState[String(data[column.key])]">{{getText(column)}}</el-tag>
     </span>-->
-    <span @click="handleClick" v-if="column.tableView===tableView.date">{{getObjKeyValue(data,column.key), ((column.options&&column.options.format)||'yyyy-MM-dd hh:mm:ss') | parseTimeTwo}}</span>
+    <span @click="handleClick" v-if="column.tableView===tableView.date">{{ showTime() }}</span>
     <!--    <span @click="handleClick" v-if="column.tableView===tableView.colorView||column.tableView===tableView.pointerColorView" :style="getStyle">{{ basics.isNull(data[column.key])?((column.options&&column.options.alternate)||'-'):data[column.key] }}</span>-->
   </div>
 </template>
@@ -24,15 +24,16 @@
 import { getObjKeyValue, picturePath } from '@/utils/index'
 import { tableItemType } from '@/utils/config'
 import { listSerialize } from '@/components/restructure/form/render/render'
+import { parseTimeTwo } from '@/utils/filter'
 
 export default {
   name: 'Index',
   props: {
-    column: {
+    column: { // 自定义的表格的列的配置项
       type: Object,
       default: () => {}
     },
-    data: {
+    data: { // 表格的数据
       type: Object,
       default: () => {}
     }
@@ -64,6 +65,14 @@ export default {
     }
   },
   methods: {
+    // 时间格式化
+    showTime () {
+      const timeValue = this.getObjKeyValue(this.column.key, this.data)
+      const timeFormat = (this.column.options && this.column.options.format) || 'yyyy-MM-dd hh:mm:ss'
+      console.log(timeValue)
+      return parseTimeTwo(timeValue, timeFormat)
+    },
+    // 展示文本
     getText (column, callback) {
       let ret = '-'
       const lists = !this.basics.isArray(column.list) ? [] : column.list
@@ -95,8 +104,9 @@ export default {
       if (this.basics.isNull(data)) { return '-' }
       return data + column.options.prefixTitle
     },
+    // 图片显示
     getView (path) {
-      this.$store.commit('disposePictureInfo', picturePath(path))
+      this.$store.commit('SET_PICTUREINFO', picturePath(path))
     },
     handleClick () {
       try {
@@ -118,7 +128,7 @@ export default {
         const query = data.query || []
         let aggieQuery = {}
         if (this.basics.isArray(query)) {
-          data.query.filter((item) => {
+          query.filter((item) => {
             aggieQuery[item] = data[item] || ''
           })
         } else if (this.basics.isFunction(query)) {

@@ -109,7 +109,6 @@ export default {
       } else if (this.basics.isArray(reg)) {
         ret = this.setRegular(reg, item)
       }
-      console.log('value', item.value)
       return ret
     },
     setRegular (regArr, item) { // 设置每一项列表的正则
@@ -127,7 +126,6 @@ export default {
       this.$refs[formName].resetFields()
     },
     validateForm (formName = 'ruleForm') { // 验证表单
-      console.log(this.resFormData)
       return new Promise((resolve, reject) => {
         this.$refs[formName].validate((valid) => {
           if (valid) {

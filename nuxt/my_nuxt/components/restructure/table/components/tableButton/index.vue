@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-for="(item, index) in activeTypeList" :key="index">
+    <template v-for="(item) in activeTypeList">
       <div v-if="showOrHidden(item,row)" class="activeButton">
         <el-button
           :size="item.size"
@@ -8,7 +8,9 @@
           :icon="otherOrFn(item.icon, item)"
           :disabled="basics.isFunction(item.disabled) ? item.disabled(row) : item.disabled"
           @click="item.click(index,item,row,vm)"
-        >{{ otherOrFn(item.text, item) }}</el-button>
+        >
+          {{ otherOrFn(item.text, item) }}
+        </el-button>
       </div>
     </template>
   </div>
@@ -33,8 +35,7 @@ export default {
     },
     row: {
       type: Object,
-      default: () => {
-      }
+      default: () => ({})
     },
     index: { // 外面的index,暂时没用到
       type: Number,
@@ -54,12 +55,13 @@ export default {
       },
       [tableItemType.activeType.dialog]: {
         text: '弹窗',
-        click: (index, item, params, vm) => {
+        click: (index, item, row, vm) => {
+          console.log(item, row)
           if (this.basics.isNull(item.key)) { error('key Can not be empty') }
           this.$emit('dialog', {
             key: item.key,
             index,
-            params
+            row
           })
         },
         theme: 'primary',

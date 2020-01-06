@@ -1,13 +1,13 @@
 <template>
   <div class="pagination-box">
     <el-pagination
-      :page-size="[10, 20, 30, 40, 50]"
+      :page-sizes="[10, 20, 30, 40, 50]"
       :page-size.sync="getPageSize"
       :current-page.sync="getCurrentPage"
       :total="total"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
-      layout="total, size, prev, pager, next, jumper"
+      layout="total, sizes, prev, pager, next, jumper"
       background
     />
   </div>
