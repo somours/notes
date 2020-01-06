@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const a = {
+      valueOf() {
+        return '1'
+      },
+      toString() {
+        return false
+      }
+    }
+    const b = {
+      toString() {
+        return true
+      }
+    }
+    console.log(a + '1') // '11'
+    console.log(b + true) // 2
+    console.log(a + b) // 1true
+    console.log(a - b) // 0
+
+    const fn = function (a, b) {
+      const obj = {
+        func: (a, b) => {
+          console.log(this, arguments, obj.func.prototype, a, b)
+        }
+      }
+      return obj
+    }
+    const obj = fn(1, 2)
+    obj.func(3) //
+    new obj.func(4) //报错
+  </script>
+</body>
+
+</html>
