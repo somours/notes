@@ -48,22 +48,21 @@ export function deepClone (source) {
  * @param:enums 需要过滤的枚举
  * @return:
  */
-export const filterEnums = (value, enums) => {
+export const filterEnumsLabel = (value, enums, formatObj = {
+  value: 'value',
+  label: 'label'
+}) => {
+  let ret = '-'
   if (basics.isNull(value) || basics.isNull(enums)) {
-    return {
-      value: '-',
-      label: '-'
-    }
+    return ret
   }
   const filterEnum = enums.filter((item) => {
-    if (String(item.value) === String(value)) { return item }
+    if (String(item[formatObj.value]) === String(value)) { return item }
   })
-  if (filterEnum.length > 0) { return filterEnum[0] } else {
-    return {
-      value: '-',
-      label: '-'
-    }
+  if (filterEnum.length > 0) {
+    ret = filterEnum[0][formatObj.label]
   }
+  return ret
 }
 
 /**

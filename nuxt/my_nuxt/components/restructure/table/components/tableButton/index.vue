@@ -108,7 +108,8 @@ export default {
       }
       return {
         basicsButtonConfig,
-        ...this[type] ? this[type] : {}
+        ...this[type] ? this[type] : {},
+        ...this.basics.isObj(activeItem) ? activeItem : {}
         // ...this.basics.isFunction(activeItem) ? activeItem(this.params) : (this.basics.isObj(activeItem) ? activeItem : {})
       }
     },

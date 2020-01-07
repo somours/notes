@@ -18,25 +18,24 @@
             :show-overflow-tooltip="basics.isNull(item.tooltip) ? true : item.tooltip"
             :fixed="basics.isNull(item.fixed) ? false : item.fixed"
           >
-            <template slot-scope="scope" >
-              <template v-if="item.children">
-                <el-table-column
-                  v-for="(childrenItem, childrenIndex) in item.children"
-                  :key="childrenIndex"
-                  :align="basics.isNull(childrenItem.align) ? 'center' : childrenItem.align"
-                  :label="getItemTitle(childrenItem)"
-                  :width="childrenItem.width"
-                  :show-overflow-tooltip="basics.isNull(childrenItem.tooltip) ? true : childrenItem.tooltip"
-                >
-                  <template slot-scope="scope">
-                    <div v-if="!childrenItem.render">
-                      {{ getObjKeyValue(childrenItem.key, scope.row, childrenItem.standBy ) }}
-                    </div>
-                    <MyTemplate v-else :render="childrenItem.render" :data="{data: scope, column: childrenItem}" />
-                  </template>
-                </el-table-column>
+            <el-table-column
+              v-if="item.children"
+              v-for="(childrenItem, childrenIndex) in item.children"
+              :key="childrenIndex"
+              :align="basics.isNull(childrenItem.align) ? 'center' : childrenItem.align"
+              :label="getItemTitle(childrenItem)"
+              :width="childrenItem.width"
+              :show-overflow-tooltip="basics.isNull(childrenItem.tooltip) ? true : childrenItem.tooltip"
+            >
+              <template slot-scope="scope">
+                <div v-if="!childrenItem.render">
+                  {{ getObjKeyValue(childrenItem.key, scope.row, childrenItem.standBy ) }}
+                </div>
+                <MyTemplate v-else :render="childrenItem.render" :data="{data: scope, column: childrenItem}" />
               </template>
-              <div v-else>
+            </el-table-column>
+            <template v-if="!item.children" slot-scope="scope">
+              <div>
                 <MyTemplate v-if="item.render" :render="item.render" :data="{data: scope, column: item}" />
                 <div v-else>
                   <div v-if="itemTypeIsActive(item)">

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { getObjKeyValue, picturePath } from '@/utils/index'
+import { filterEnumsLabel, getObjKeyValue, picturePath } from '@/utils/index'
 import { tableItemType } from '@/utils/config'
 import { listSerialize } from '@/components/restructure/form/render/render'
 import { parseTimeTwo } from '@/utils/filter'
@@ -69,28 +69,26 @@ export default {
     showTime () {
       const timeValue = this.getObjKeyValue(this.column.key, this.data)
       const timeFormat = (this.column.options && this.column.options.format) || 'yyyy-MM-dd hh:mm:ss'
-      console.log(timeValue)
       return parseTimeTwo(timeValue, timeFormat)
     },
     // 展示文本
     getText (column, callback) {
       let ret = '-'
-      const lists = !this.basics.isArray(column.list) ? [] : column.list
+      const list = !this.basics.isArray(column.list) ? [] : column.list
       // 把表格的requestList放在这里处理感觉比较好 ??
       if (column.requestList) {
         column.requestList().then((res) => {
           listSerialize(res, column.listFormat, (serializedItem) => {
-            lists[serializedItem.index] = serializedItem
+            list[serializedItem.index] = serializedItem
           })
         })
       }
       const keyValue = this.data[column.key]
-      const tmpObj = lists.find((item) => {
-        return String(item.value) === String(keyValue)
-      })
-      if (tmpObj) {
-        ret = tmpObj.label
+      const formatObj = this.basics.isObj(column.listFormat) ? column.listFormat : {
+        value: 'value',
+        label: 'label'
       }
+      ret = filterEnumsLabel(keyValue, list, formatObj)
       // if (callback) callback(filter[0]);
       return ret
     },

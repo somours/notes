@@ -39,6 +39,12 @@ const statusList = [
     value: '300',
     label: '已退单'
   }]
+
+// 账号的类型
+const userTypeList = [
+  { value: 0, label: '用户' },
+  { value: 100, label: '机构' }
+]
 export default {
   components: {
     TestRender,
@@ -68,6 +74,52 @@ export default {
           key: 'robSuccessTime',
           width: 160,
           tableView: tableItemType.tableView.date
+        },
+        {
+          title: '账号类型',
+          key: 'userType',
+          list: userTypeList,
+          search: true,
+          type: formItemType.select,
+          tableView: tableItemType.tableView.text
+        },
+        {
+          title: '客单价格',
+          children: [
+            {
+              title: '原价',
+              key: 'originalPrice',
+              width: 90
+            },
+            {
+              title: '折扣率',
+              key: 'discountRate',
+              render (h, { data }) {
+                const discountRat = data.row.discountRate
+                return h(
+                  'span',
+                  discountRat !== null ? discountRat + '%' : '-'
+                )
+              },
+              width: 90
+            },
+            {
+              title: '折扣价',
+              key: 'discountPrice',
+              width: 90,
+              standBy: 0
+            },
+            {
+              title: '特价',
+              key: 'tjPrice',
+              width: 90
+            },
+            {
+              title: '最终成交价',
+              key: 'currentPrice',
+              width: 90
+            }
+          ]
         },
         {
           type: tableItemType.active,
