@@ -1,13 +1,12 @@
 <template>
   <div class="search-container">
     <MyForm :label-width="labelWidth" :inline="inline" :form-lists="searchLists">
-      <template slot="formContainer">
-        <el-form-item>
-          <el-button @click="handleSearch" type="primary" icon="el-icon-search">
-            {{ searchButtonText }}
-          </el-button>
-        </el-form-item>
-      </template>
+      <el-form-item>
+        <el-button @click="handleSearch" type="primary" icon="el-icon-search">
+          {{ searchButtonText }}
+        </el-button>
+      </el-form-item>
+      <slot name="searchContainer" />
     </MyForm>
   </div>
 </template>

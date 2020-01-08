@@ -95,10 +95,6 @@ export default {
     Pagination
   },
   props: {
-    // tableData: {
-    //   type: Object,
-    //   default: () => ({})
-    // },
     tableLists: {
       type: Array,
       default: () => []
@@ -107,10 +103,6 @@ export default {
       type: String,
       default: '操作'
     },
-    // rowData: {
-    //   type: Array,
-    //   defautl
-    // },
     request: { // 表格的相关接口,要求传入的是一个返回promise的函数
       type: Object,
       default: () => ({
@@ -130,8 +122,10 @@ export default {
   data () {
     return {
       getObjKeyValue,
+      // 表格数据
       tableData: [],
       total: 0,
+      // 表格分页信息
       tableInfo,
       tableItemType
     }
