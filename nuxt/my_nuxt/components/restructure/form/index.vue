@@ -1,6 +1,6 @@
 <template>
   <el-form
-    ref="ruleForm"
+    :ref="ref"
     :size="size"
     :model="resFormData"
     :label-width="labelWidth"
@@ -52,6 +52,11 @@ export default {
     formLists: { // 表格每一项的配置列表
       type: Array,
       default: () => []
+    },
+    // form的ref节点
+    ref: {
+      type: String,
+      default: 'ruleForm'
     }
   },
   data () {
@@ -122,10 +127,10 @@ export default {
         }
       })
     },
-    resetForm (formName = 'ruleForm') { // 重置表单
+    resetForm (formName = this.ref) { // 重置表单
       this.$refs[formName].resetFields()
     },
-    validateForm (formName = 'ruleForm') { // 验证表单
+    validateForm (formName = this.ref) { // 验证表单
       return new Promise((resolve, reject) => {
         this.$refs[formName].validate((valid) => {
           if (valid) {

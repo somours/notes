@@ -1,13 +1,13 @@
 <template>
   <MyDialog
-    append-to-body
-    width="30%"
-    :
+    :dialogVisible="dialogVisible"
+    :data="data"
   >
     <MyForm
-      ref="ruleForm"
+      ref="dialogRuleForm"
       :size="size"
-      :formData="formData"
+      :formData="dealedFormData"
+      :form-lists="formLists"
       :label-width="labelWidth"
       :inline="inline"
       class="my-ruleForm"
@@ -22,7 +22,7 @@
         </el-button>
       </div>
       <div v-if="dialogFooterState===dialogFooterState.close" style="text-align: center;">
-        <el-button @click="dialogVisible = false">
+        <el-button @click="close">
           关 闭
         </el-button>
       </div>
@@ -77,33 +77,99 @@ export default {
       type: Object,
       default: () => {
         return {
-          updateHttp: () => Promise.resolve(1),
-          insertHttp: () => Promise.resolve(2),
-          getByIdHttp: {}
+          updateHttp: () => Promise.resolve(),
+          insertHttp: () => Promise.resolve(),
+          getByIdHttp: () => Promise.resolve()
         }
       }
     },
     dialogFooterState: {
       type: String,
       default: dialogFooterState.common
+    },
+    isEdit: { // 默认为添加
+      type: Boolean,
+      default: false
+    },
+    tableRefresh: { // 刷新相应的表格
+      type: Function,
+      default: () => {}
+    },
+    // 请求的参数
+    requestParams: {
+      type: Array,
+      default: () => []
     }
   },
   data () {
     return {
-      dialogFooterState,
-      loading: false
+      // 确认按钮时的按钮loading
+      loading: false,
+      // 处理后的formData, 将传入的与请求的合并
+      dealedFormData: {}
     }
   },
   computed: {
-    getRequest () {
+    addOrEditRequest () {
       if (basics.isNull(this.urls.insertHttp) && this.basics.isNull(this.urls.updateHttp)) {
-        return () => Promise.resolve()
+        return () => new Promise()
+      } else {
+        return this.isEdit ? this.urls.updateHttp : this.urls.insertHttp
       }
+    },
+    getByIdHttp () {
+      return basics.isFunction(this.urls.getByIdHttp) ? this.urls.getByIdHttp : () => Promise.resolve({})
+    },
+    // 默认要请求的参数
+    defaultRequestParams () {
+      const ret = []
+      this.formLists.map((item) => {
+        const key = item.key
+        if (item.childKey && basics.isArray(item.childKey)) {
+          ret.push(item.childKey[0], item.childKey[1])
+        } else {
+          ret.push(key)
+        }
+      })
+      return ret
     }
   },
+  mounted () {
+    this.getByIdHttp().then((res) => {
+      this.dealedFormData = { ...this.formData, ...res }
+      // 暴露事件
+      this.$emit('dialogFormLoad', this.dealedFormData)
+    })
+  },
   methods: {
-    cancel () {},
-    sure () {}
+    cancel () {
+      this.close()
+    },
+    close () {
+      this.$emit('update:dialogVisible', false)
+    },
+    sure () {
+      this.$refs.dialogRuleForm.validateForm().then((res) => { // res为处理后的数据
+        console.log(res)
+        this.$emit('validateFormDataSuc', res)
+      })
+    },
+    // 添加或者更新接口
+    _addOrEditRequest (data) {
+      // 处理请求数据
+      const postObj = {}
+      const keysArr = (basics.isArray(this.requestParams) && this.requestParams.length === 0) ? this.defaultRequestParams : this.requestParams
+      keysArr.forEach((key) => {
+        postObj[key] = data[key]
+      })
+      if (this.isEdit) { // 编辑多一个id
+        postObj.id = data.id
+      }
+      this.addOrEditRequest(postObj).then((res) => {
+        this.close()
+        this.tableRefresh && this.tableRefresh()
+      })
+    }
   }
 }
 </script>
