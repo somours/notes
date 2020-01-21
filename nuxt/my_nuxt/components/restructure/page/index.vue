@@ -1,10 +1,14 @@
 <template>
   <div class="my-page">
     <div class="search-contianer">
-      <MySearch @handleSearch="handleSearch">
+      <MySearch
+        @handleSearch="handleSearch"
+        :searchLists="listMixins.searchList"
+        :extraItemListObj="extraItemListObj"
+      >
         <template slot="searchContainer">
           <slot name="addBefore" />
-          <el-form-item v-if="isNeedAdd">
+          <el-form-item v-if="listMixins.isNeedAdd">
             <el-button @click="handleAdd" size="small" type="primary" icon="el-icon-circle-plus-outline">
               添加
             </el-button>
@@ -15,12 +19,14 @@
     </div>
     <div class="table-container">
       <MyTable
-        :request="request"
+        :tableLists="listMixins.tableList"
+        :urls="urls"
         :query="query"
         :paginationState="paginationState"
         @tableLoad="tableLoad"
         @getByIdCallback="getByIdCallback"
         @dialog="dialog"
+        :extraItemListObj="extraItemListObj"
       />
     </div>
     <MyDialog
@@ -35,6 +41,15 @@
         <slot :name="key" :params="dialogDetailData" :state="dialogState" />
       </template>
     </MyDialog>
+    <!--formdialog-->
+    <MyFormDialog
+      :dialogVisible.sync="addOrEditDialog.visible"
+      :formData="addOrEditDialog.data"
+      :formLists="listMixins.formList"
+      :is-edit="addOrEditDialog.isEdit"
+      :urls="urls"
+      :extraItemListObj="extraItemListObj"
+    />
   </div>
 </template>
 
@@ -42,6 +57,7 @@
 import MyTable from '../table/index'
 import MySearch from '../search/index'
 import MyDialog from '../dialog/index'
+import MyFormDialog from '../dialogForm/index'
 import basics from '@/utils/libs/basics'
 import { tableItemType } from '@/utils/config'
 import { deepClone } from '@/utils'
@@ -50,11 +66,12 @@ export default {
   components: {
     MyTable,
     MySearch,
-    MyDialog
+    MyDialog,
+    MyFormDialog
   },
   props: {
     // 请求接口,列表getListUrl, 新增insertHttp, 编辑updateHttp
-    request: {
+    urls: {
       type: Object,
       default: () => ({})
     },
@@ -72,17 +89,21 @@ export default {
     paginationState: {
       type: Boolean,
       default: true
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {
     return {
-      // 是否需要新增按钮
-      isNeedAdd: false,
       // 表格的搜索条件
       query: {},
       // 默认新增或者编辑详情的弹窗
       addOrEditDialog: {
         visible: false,
+        isEdit: false,
         data: {}
       },
       // 存放dialog的状态
@@ -98,11 +119,12 @@ export default {
     listMixins () {
       const ret = {
         searchList: [],
-        isNeedAdd: false,
+        isNeedAdd: false, // 是否需要新增按钮
         tableList: [],
         formList: []
       }
       this.list.forEach((item) => {
+        // item.list = basics.isArray(item.list) ? item.list : [] // 每个自身组件里做了处理,因为要独立出去
         if (item.tableHidden !== false) {
           if (this.typeIsActive(item)) {
             if (basics.isArray(item.activeType)) {
@@ -125,13 +147,14 @@ export default {
           }
           ret.tableList.push({ ...item })
         }
-        if (item.formHidden !== false && !this.typeIsActive(item)) {
+        if (item.form === true && !this.typeIsActive(item)) {
           ret.formList.push(this.filterKey('form', { ...item }))
         }
         if (item.search === true && !this.typeIsActive(item)) {
-          ret.searchList.push(this.filterKey('search', { ...item }))
+          ret.searchList.push(this.filterKey('search', { ...item, reg: [] }))
         }
       })
+      console.log('listMixins', ret)
       return ret
     }
   },
@@ -151,7 +174,12 @@ export default {
       return item.type === tableItemType.active
     },
     // 新增的按钮
-    handleAdd () {},
+    handleAdd () {
+      this.addOrEditDialog.visible = true
+      this.addOrEditDialog.isEdit = false
+      this.addOrEditDialog.data = {}
+      this.$emit('handleAdd')
+    },
     // 表格加载列表完成
     tableLoad (data) { // data为接口返回的数据
       console.log(data)
