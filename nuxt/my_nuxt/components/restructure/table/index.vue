@@ -103,7 +103,7 @@ export default {
       type: String,
       default: '操作'
     },
-    request: { // 表格的相关接口,要求传入的是一个返回promise的函数
+    urls: { // 表格的相关接口,要求传入的是一个返回promise的函数
       type: Object,
       default: () => ({
         getListUrl: () => Promise.resolve({}),
@@ -117,6 +117,11 @@ export default {
     paginationState: { // 是否展示分页
       type: Boolean,
       default: true
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {
@@ -130,8 +135,17 @@ export default {
       tableItemType
     }
   },
-  computed: {
-
+  watch: {
+    extraItemListObj: {
+      deep: true,
+      handler () {
+        this.tableLists.forEach((item, index) => {
+          if (this.extraItemListObj.hasOwnProperty(item.key)) {
+            this.$set(this.tableLists[index], 'list', this.extraItemListObj[item.key])
+          }
+        })
+      }
+    }
   },
   mounted () {
     this.getTableList()
@@ -164,7 +178,7 @@ export default {
       //   this.total = this.tableData.length
       //   return false
       // }
-      this.request.getListUrl({ ...this.tableInfo, ...this.query }).then((res) => {
+      this.urls.getListUrl({ ...this.tableInfo, ...this.query }).then((res) => {
         if (this.paginationState === false) {
           this.tableData = res
         } else {
@@ -178,7 +192,7 @@ export default {
     // 表格里面的删除按钮
     deleteActive (row, index) {
       delectConfirm(this).then(() => {
-        this.request.deleteUrl(
+        this.urls.deleteUrl(
           {
             id: row.id
           },
@@ -193,7 +207,7 @@ export default {
     },
     // 表格普遍的通过id查询详情
     getById (row) { // 可以是空,或者返回Promise的函数,或者一个对象
-      const getByIdUrl = this.request.getByIdHttp
+      const getByIdUrl = this.urls.getByIdHttp
       const http = this.basics.isNull(getByIdUrl) ? () => Promise.resolve(row)
         : this.basics.isObj(getByIdUrl) ? () => Promise.resolve(getByIdUrl) : getByIdUrl
       this.$emit('getByIdCallback', () => {
@@ -226,6 +240,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.pagination {
+  padding-top: 20px;
+}
 </style>

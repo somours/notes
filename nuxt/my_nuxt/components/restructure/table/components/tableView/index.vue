@@ -23,7 +23,7 @@
 <script>
 import { filterEnumsLabel, getObjKeyValue, picturePath } from '@/utils/index'
 import { tableItemType } from '@/utils/config'
-import { listSerialize } from '@/components/restructure/form/render/render'
+// import { listSerialize } from '@/components/restructure/form/render/render'
 import { parseTimeTwo } from '@/utils/filter'
 
 export default {
@@ -36,6 +36,11 @@ export default {
     data: { // 表格的数据
       type: Object,
       default: () => {}
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {
@@ -74,20 +79,19 @@ export default {
     // 展示文本
     getText (column, callback) {
       let ret = '-'
-      const list = !this.basics.isArray(column.list) ? [] : column.list
-      // 把表格的requestList放在这里处理感觉比较好 ??
-      if (column.requestList) {
-        column.requestList().then((res) => {
-          listSerialize(res, column.listFormat, (serializedItem) => {
-            list[serializedItem.index] = serializedItem
-          })
-        })
-      }
-      const keyValue = this.data[column.key]
+      const list = this.basics.isArray(column.list) ? column.list : []
       const formatObj = this.basics.isObj(column.listFormat) ? column.listFormat : {
         value: 'value',
         label: 'label'
       }
+      // if (column.requestList) {
+      //   column.requestList().then((res) => {
+      //     listSerialize(res, formatObj, (serializedItem) => {
+      //       list[serializedItem.index] = serializedItem
+      //     })
+      //   })
+      // }
+      const keyValue = this.data[column.key]
       ret = filterEnumsLabel(keyValue, list, formatObj)
       // if (callback) callback(filter[0]);
       return ret

@@ -1,12 +1,14 @@
 <template>
   <div class="search-container">
-    <MyForm :label-width="labelWidth" :inline="inline" :form-lists="searchLists">
-      <el-form-item>
-        <el-button @click="handleSearch" type="primary" icon="el-icon-search">
-          {{ searchButtonText }}
-        </el-button>
-      </el-form-item>
-      <slot name="searchContainer" />
+    <MyForm ref="searchForm" :label-width="labelWidth" :inline="inline" :form-lists="searchLists">
+      <template slot="formContainer">
+        <el-form-item>
+          <el-button @click="handleSearch" type="primary" icon="el-icon-search">
+            {{ searchButtonText }}
+          </el-button>
+        </el-form-item>
+        <slot name="searchContainer" />
+      </template>
     </MyForm>
   </div>
 </template>
@@ -37,7 +39,10 @@ export default {
   },
   methods: {
     handleSearch () { // 触发searchData出去
-      this.$emit('handleSearch', {})
+      this.$refs.searchForm.validateForm().then((res) => {
+        console.log(res)
+        this.$emit('handleSearch', res)
+      })
     }
   }
 }

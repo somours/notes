@@ -34,6 +34,11 @@ export default {
     value: {
       type: [Number, String, Array],
       default: ''
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {

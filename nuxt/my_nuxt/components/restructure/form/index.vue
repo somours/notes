@@ -1,6 +1,6 @@
 <template>
   <el-form
-    :ref="ref"
+    :ref="formRef"
     :size="size"
     :model="resFormData"
     :label-width="labelWidth"
@@ -13,7 +13,7 @@
           <slot :name="item.slot" />
         </div>
         <div v-else>
-          <MyRender :item="item" :index="index" :value.sync="resFormData[item.key]" :formData="resFormData" />
+          <MyRender :item="item" :index="index" :value.sync="resFormData[item.key]" :extraItemListObj="extraItemListObj" :formData="resFormData" />
         </div>
       </template>
     </el-form-item>
@@ -26,6 +26,7 @@ import MyRender from './render/index.vue'
 import { regular } from '@/utils/validate'
 import { keyWord } from '@/utils/config'
 import { deepClone } from '@/utils/index'
+import basics from '@/utils/libs/basics'
 
 export default {
   name: 'MyForm',
@@ -54,15 +55,39 @@ export default {
       default: () => []
     },
     // form的ref节点
-    ref: {
+    formRef: {
       type: String,
       default: 'ruleForm'
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {
     return {
       trigger: 'blur',
       resFormData: {}
+    }
+  },
+  watch: {
+    formData: {
+      deep: true,
+      handler () {
+        console.log('formFormData', this.formData)
+        this.dealFormData()
+      }
+    },
+    extraItemListObj: {
+      deep: true,
+      handler () {
+        this.formLists.forEach((item, index) => {
+          if (this.extraItemListObj.hasOwnProperty(item.key)) {
+            this.$set(this.formLists[index], 'list', this.extraItemListObj[item.key])
+          }
+        })
+      }
     }
   },
   mounted () {
@@ -90,11 +115,12 @@ export default {
           if (this.basics.isNull(this.formData[key]) && (this.basics.isArray(this.formData[key]) && this.basics.isArrNull(this.formData[key]))) {
             tempObj[key] = this.basics.isNull(item.value) ? '' : item.value
           } else {
-            tempObj[key] = this.formData[key] || ''
+            tempObj[key] = basics.isNull(this.formData[key]) ? '' : this.formData[key]
           }
         }
         if (fn) { fn(item, index) }
       })
+      console.log('resultFormData', tempObj)
       this.resFormData = tempObj
     },
     setItemValue (item) {
@@ -127,10 +153,10 @@ export default {
         }
       })
     },
-    resetForm (formName = this.ref) { // 重置表单
+    resetForm (formName = this.formRef) { // 重置表单
       this.$refs[formName].resetFields()
     },
-    validateForm (formName = this.ref) { // 验证表单
+    validateForm (formName = this.formRef) { // 验证表单
       return new Promise((resolve, reject) => {
         this.$refs[formName].validate((valid) => {
           if (valid) {

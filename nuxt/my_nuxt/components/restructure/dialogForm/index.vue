@@ -1,32 +1,36 @@
 <template>
   <MyDialog
-    :dialogVisible="dialogVisible"
-    :data="data"
+    :dialogVisible.sync="visible"
+    :data="dialogData"
   >
     <MyForm
       ref="dialogRuleForm"
+      :formRef="formRef"
       :size="size"
       :formData="dealedFormData"
       :form-lists="formLists"
       :label-width="labelWidth"
       :inline="inline"
+      :extraItemListObj="extraItemListObj"
       class="my-ruleForm"
     />
-    <div slot="footer" class="dialog-footer">
-      <div v-if="dialogFooterState === dialogFooterState.common">
-        <el-button @click="cancel">
-          取消
-        </el-button>
-        <el-button :loading="loading" @click="sure" type="primary">
-          确定
-        </el-button>
+    <slot name="dialogFooter">
+      <div class="dialog-footer">
+        <div v-if="isCommon">
+          <el-button @click="cancel">
+            取消
+          </el-button>
+          <el-button :loading="loading" @click="sure" type="primary">
+            确定
+          </el-button>
+        </div>
+        <div v-else style="text-align: center;">
+          <el-button @click="close">
+            关 闭
+          </el-button>
+        </div>
       </div>
-      <div v-if="dialogFooterState===dialogFooterState.close" style="text-align: center;">
-        <el-button @click="close">
-          关 闭
-        </el-button>
-      </div>
-    </div>
+    </slot>
   </MyDialog>
 </template>
 
@@ -48,7 +52,7 @@ export default {
       type: Boolean,
       default: false
     },
-    data: {
+    dialogData: {
       type: Object,
       default: () => ({})
     },
@@ -79,9 +83,14 @@ export default {
         return {
           updateHttp: () => Promise.resolve(),
           insertHttp: () => Promise.resolve(),
-          getByIdHttp: () => Promise.resolve()
+          getByIdHttp: () => Promise.resolve(),
+          getListUrl: () => Promise.resolve()
         }
       }
+    },
+    needRequest: {
+      type: Boolean,
+      default: false
     },
     dialogFooterState: {
       type: String,
@@ -93,12 +102,22 @@ export default {
     },
     tableRefresh: { // 刷新相应的表格
       type: Function,
-      default: () => {}
+      default: null
     },
     // 请求的参数
     requestParams: {
       type: Array,
       default: () => []
+    },
+    // form的ref节点
+    formRef: {
+      type: String,
+      default: 'ruleForm'
+    },
+    // 需要请求的item里的list数组,为一个对象,key为item.key,value为请求后的列表数据
+    extraItemListObj: {
+      type: Object,
+      default: () => ({})
     }
   },
   data () {
@@ -110,16 +129,30 @@ export default {
     }
   },
   computed: {
+    // 底部状态
+    isCommon () {
+      return this.dialogFooterState === dialogFooterState.common
+    },
+    // 弹窗的显示
+    visible: {
+      get () {
+        return this.dialogVisible
+      },
+      set (val) {
+        this.$emit('update:dialogVisible', val)
+      }
+    },
     addOrEditRequest () {
       if (basics.isNull(this.urls.insertHttp) && this.basics.isNull(this.urls.updateHttp)) {
-        return () => new Promise()
+        return () => (new Promise(resolve => resolve({})))
       } else {
         return this.isEdit ? this.urls.updateHttp : this.urls.insertHttp
       }
     },
-    getByIdHttp () {
-      return basics.isFunction(this.urls.getByIdHttp) ? this.urls.getByIdHttp : () => Promise.resolve({})
-    },
+    // getByIdHttp () {
+    //   const ret = basics.isFunction(this.urls.getByIdHttp) ? this.urls.getByIdHttp : () => (new Promise(() => resolve({})))
+    //   return ret
+    // },
     // 默认要请求的参数
     defaultRequestParams () {
       const ret = []
@@ -134,24 +167,54 @@ export default {
       return ret
     }
   },
+  watch: {
+    dialogVisible () {
+      if (this.dialogVisible && this.needRequest) {
+        this._dialogFormLoad()
+      }
+    },
+    formData: {
+      deep: true,
+      handler () {
+        console.log('dialogFormData', this.formData)
+        if (this.isEdit) {
+          this._dialogFormLoad()
+        }
+      }
+    }
+  },
   mounted () {
-    this.getByIdHttp().then((res) => {
-      this.dealedFormData = { ...this.formData, ...res }
-      // 暴露事件
-      this.$emit('dialogFormLoad', this.dealedFormData)
-    })
+    this._dialogFormLoad()
   },
   methods: {
+    _dialogFormLoad () {
+      if (this.needRequest) {
+        const getByIdHttp = basics.isFunction(this.urls.getByIdHttp) ? this.urls.getByIdHttp : () => (new Promise(resolve => resolve({})))
+        getByIdHttp().then((res) => {
+          this.dealedFormData = { ...this.formData, ...res }
+          // 暴露事件
+          this.$emit('dialogFormLoad', this.dealedFormData)
+        })
+      } else {
+        this.dealedFormData = { ...this.formData }
+        // 暴露事件
+        this.$emit('dialogFormLoad', this.dealedFormData)
+      }
+    },
     cancel () {
       this.close()
     },
     close () {
-      this.$emit('update:dialogVisible', false)
+      this.visible = false
+      this.dealedFormData = {}
+      this.$refs.dialogRuleForm.resetForm()
+      // this.$emit('update:dialogVisible', false)
     },
     sure () {
       this.$refs.dialogRuleForm.validateForm().then((res) => { // res为处理后的数据
         console.log(res)
         this.$emit('validateFormDataSuc', res)
+        this._addOrEditRequest(res)
       })
     },
     // 添加或者更新接口
@@ -167,13 +230,20 @@ export default {
       }
       this.addOrEditRequest(postObj).then((res) => {
         this.close()
-        this.tableRefresh && this.tableRefresh()
+        const tableRefresh = basics.isNull(this.tableRefresh) ? this.urls.getListUrl : this.tableRefresh
+        if (basics.isFunction(tableRefresh)) {
+          tableRefresh()
+        }
       })
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -45,6 +45,7 @@ export default {
       this.$emit('openDialog')
     },
     closeDialog () {
+      this.visible = false
       this.$emit('closeDialog')
     }
   }
