@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/provinceItem/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/provinceItem/index.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,6 +19,7 @@
     <session id="1024369105">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -28,12 +31,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="vue" value="1" />
+          <entry key="js" value="1" />
+          <entry key="vue" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Vue.js" value="1" />
+          <entry key="JavaScript" value="1" />
+          <entry key="Vue.js" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -49,11 +54,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="28" selection-end-column="64" />
+            <state relative-caret-position="1755">
+              <caret line="189" selection-start-line="189" selection-end-line="189" />
+              <folding>
+                <element signature="e#1328#1361#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/area.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="671" selection-start-line="671" selection-end-line="671" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/provinceItem/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -63,6 +89,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -74,6 +101,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue" />
+        <option value="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/area.js" />
+        <option value="$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/provinceItem/index.vue" />
       </list>
     </option>
   </component>
@@ -1749,6 +1778,21 @@
               <item name="github-notes" type="462c0819:PsiDirectoryNode" />
               <item name="nuxt" type="462c0819:PsiDirectoryNode" />
               <item name="my_nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="github-notes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="github-notes" type="462c0819:PsiDirectoryNode" />
+              <item name="nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="my_nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="github-notes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="github-notes" type="462c0819:PsiDirectoryNode" />
+              <item name="nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="my_nuxt" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1758,6 +1802,15 @@
               <item name="my_nuxt" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="pageComponent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="github-notes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="github-notes" type="462c0819:PsiDirectoryNode" />
+              <item name="nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="my_nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pageComponent" type="462c0819:PsiDirectoryNode" />
+              <item name="citySearch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="github-notes" type="b2602c69:ProjectViewProjectNode" />
@@ -1804,24 +1857,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578662763720</updated>
-      <workItem from="1578662765054" duration="1402000" />
+      <workItem from="1578662765054" duration="1834000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1402000" />
+    <option name="totallyTimeSpent" value="1834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -1851,8 +1903,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-end-column="64" />
+        <state relative-caret-position="1755">
+          <caret line="189" selection-start-line="189" selection-end-line="189" />
+          <folding>
+            <element signature="e#1328#1361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/area.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="671" selection-start-line="671" selection-end-line="671" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuxt/my_nuxt/components/pageComponent/citySearch/provinceItem/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
         </state>
       </provider>
     </entry>
