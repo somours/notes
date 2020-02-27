@@ -254,7 +254,7 @@ function trim(str) {
 // 参数说明：
 //		element:
 // 		options:
-//		speed: 
+//		speed:
 //		fn: 运动结束后要执行的函数，可选
 function animate(element, options, speed, fn) {
 	// 先取消在 element 元素上之前已有的运动动画计时器
@@ -458,7 +458,7 @@ export function prefixStyle(style) {
 }
 
 
-//克隆对象的方法;
+//克隆对象的方法;模拟Object.create()
 function clone() {
 	Object.create = Object.create || function (obj) {
 		var F = function () { };
@@ -611,12 +611,12 @@ export function prefixStyle(style) {
 }
 
 
-
+// 转换对象为url参数
 export function param(data) {
 	let url = ''
-	for (var k in data) {
-		let value = data[k] !== undefined ? data[k] : ''
-		url += '&' + k + '=' + encodeURIComponent(value)
+	for (var key in data) {
+		let value = data.hasOwnProperty(key) ? data[key] : ''
+		url += '&' + key + '=' + encodeURIComponent(value)
 	}
 	return url ? url.substring(1) : ''
 }
@@ -746,18 +746,16 @@ class OS {
 }
 Vue.prototype.os = new OS()
 
-
+// 设置cookie
 export function setCookie(name, value) {
 	var Days = 30 * 12 * 10;
-
 	var exp = new Date();
-
 	exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
 	if (process.client) {
 		document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
 	}
 }
-
+// 获取cookie
 export function getCookie(name) {
 	var arr
 	var reg
