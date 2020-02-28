@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="gif.js"></script>
+    <script src="gif.worker.js"></script>
+    <script src="./htmlcavas2.min.js"></script>
+    <style>
+        #img
+        {
+            position: absolute;
+            width:50px;
+            height:50px;
+            display: inline-block;
+            top: 50%;
+            margin-top: -25px;
+            left: 0;
+            z-index: -1;
+        }
+        .img{
+            margin-left: 30px;
+        }
+        #divs{
+            position: relative;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            font-size: 0;
+            background: url("icon_bg.png");
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="divs">
+        <img id="img" class="img" src="icon_elm.png" alt="">
+        <img id="img" class="img1" style="display: none" src="icon_meituan.png" alt="">
+    </div>
+    <canvas id="canvas"></canvas>
+    <div id="imgs"></div>
+</body>
+</html>
+<script>
+    video = document.getElementById("divs");	//获取页面中的video元素
+    canvas = document.createElement("canvas"); // 创建一个画布 canvas.width = video.videoWidth * 0.1;
+    $('.img').animate({left:'125px'},1000,'linear',function () {
+        $('.img1').css({display:'block'}).animate({left:'30px'},500,'linear',function () {
+           setTimeout(()=>{
+               $('.img1').css({display:'block'}).animate({left:'130px'},1000,'linear',function () {
+                 setTimeout(()=>{
+                     var gif = new GIF({
+                     });
+                     for (let i = 0; i < $('#imgs img').length; i++) {
+                         gif.addFrame($('#imgs img')[i],{
+                             delay:100
+                         });
+                     }
+
+                     gif.on('finished', function(blob) {
+                         window.open(URL.createObjectURL(blob));
+                     });
+
+                     gif.render();
+                     clearInterval(timer)
+                 },500)
+               })
+           },500)
+        })
+    });
+    var timer = setInterval( async ()=>{
+        //两个参数：所需要截图的元素id，截图后要执行的函数， canvas为截图后返回的最后一个canvas
+     await  html2canvas(document.getElementById('divs')).then(function(canvas) {
+            const IMG = new Image();
+            IMG.src = canvas.toDataURL();
+            document.getElementById('imgs').appendChild(IMG)
+        });
+    })
+</script>
