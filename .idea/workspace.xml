@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/array/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/tools/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/router/mode/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/styles/mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/styles/vars.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/views/demo/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/views/demo/triangle/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-h5/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-h5/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +39,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-cli3/vue-h5" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="E:/study/github-notes/nuxt/my_nuxt/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/nuxt/my_nuxt/node_modules/eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -74,6 +81,7 @@
       <workItem from="1582795808550" duration="1411000" />
       <workItem from="1583138210611" duration="2059000" />
       <workItem from="1583465289564" duration="6612000" />
+      <workItem from="1585056955336" duration="670000" />
     </task>
     <servers />
   </component>
@@ -85,10 +93,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="684" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582771054884" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1582770484685">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585057025362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582770484685" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585057025362" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582775267047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
