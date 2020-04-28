@@ -1,0 +1,4 @@
+$size: 100;
+@function toRem($px) {
+  @return $px / $size * 1rem;
+}
