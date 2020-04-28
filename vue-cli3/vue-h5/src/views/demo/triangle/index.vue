@@ -8,15 +8,15 @@
 </template>
 
 <script>
-  export default {
-    name: "index"
-  }
+export default {
+  name: "index"
+};
 </script>
 
 <style scoped lang="scss">
 .triangle {
   .top {
-    @include triangle(top, 20px, green)
+    // @include triangle(top, 20px, green);
   }
 }
 </style>

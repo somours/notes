@@ -1,0 +1,136 @@
+// 禁止浏览器选择
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}
+
+// 滚动条样式
+.scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #fff;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #D8D8D8;
+    border-radius: 20px;
+  }
+}
+
+// 省略号
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//3、基于文件格式使用不同的样式
+// a[href^="http://"]{
+//   padding-right: 20px;
+//   background: url(external.gif) no-repeat center right;
+// }
+// /* emails */
+// a[href^="mailto:"]{
+//   padding-right: 20px;
+//   background: url(email.png) no-repeat center right;
+// }
+
+// /* pdfs */
+// a[href$=".pdf"]{
+//   padding-right: 20px;
+//   background: url(pdf.png) no-repeat center right;
+// }
+
+// CSS：表格列宽自适用
+// 对于表格，当谈到调整列宽时，是比较痛苦的。
+// 然后，这里有一个可以使用的技巧：给td元素添加white-space: nowrap;
+// 能让文本正确的换行
+td {
+  white-space: nowrap;
+}
+
+// 4、背景渐变动画
+// CSS中最具诱惑的一个功能是能添加动画效果，
+// 除了渐变，你可以给背景色、透明度、元素大小添加动画。
+// 它通过改变背景位置，让它看起来有动画效果。
+button {
+  background-image: linear-gradient(#5187c4, #1c2f45);
+  background-size: auto 200%;
+  background-position: 0 100%;
+  transition: background-position 0.5s;
+}    
+button:hover {
+  background-position: 0 0;
+}
+// 5只在一边或两边显示盒子阴影
+.box-shadow {
+  background-color: #ff8020;
+  width: 160px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.box-shadow:after {
+  content: "";
+  width: 150px;
+  height: 1px;
+  margin-top: 88px;
+  margin-left: -75px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  -webkit-box-shadow: 0px 0px 8px 2px #000000;
+  -moz-box-shadow: 0px 0px 8px 2px #000000;
+  box-shadow: 0px 0px 8px 2px #000000;
+}
+
+// 6 模糊文本
+.blurry-text {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+// 9、用CSS动画实现省略号动画 
+// 这个片段将帮助你制造一个ellipsis的动画，对于简单的加载状态是很有用的，而不用去使用gif图像。
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis 2s infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+}
+@keyframes ellipsis {
+  from {
+      width: 2px;
+  }
+  to {
+      width: 15px;
+  }
+}
+
+// 11、典型的CSS清除浮动
+.clearfix:after {
+  content: "."; 
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; 
+ }
+ .clearfix { display: inline-block; }
+ html[xmlns] .clearfix { display: block; }
+ * html .clearfix { height: 1%; }
+//  复制代码12、新版清除浮动（2011）
+.clearfix:before, .container:after { content: ""; display: table; }
+ .clearfix:after { clear: both; }
+ /* IE 6/7 */
+ .clearfix { zoom: 1; }

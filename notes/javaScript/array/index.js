@@ -83,4 +83,46 @@ const selfEvery = function (fn, context) {
 }
 Array.prototype.selfEvery = selfEvery
 const testEvery = [1,2,3].selfEvery(number => number > 2)
-console.log('testEvery',testEvery)
+// console.log('testEvery',testEvery)
+
+/*
+* 实现reduce
+* */
+Array.prototype.selfReduce = function (fn, initialValue) {
+  const arr = Array.prototype.slice.call(this)
+  let res
+  let startIndex
+  if(initialValue === undefined) {
+    //找到第一个非空单元(真实)的元素和小标
+    for(let i = 0; i < arr.length; i++) {
+      if(!arr.hasOwnProperty(i)) continue
+      startIndex = i;
+      res = arr[i]
+      break
+    }
+  } else {
+    res = initialValue
+  }
+  for(let i = ++initialValue || 0; i < arr.length; i++) {
+    if(!arrr.hasOwnProperty(i)) continue
+    res = fn.call(null, res, arr[i], i, this)
+  }
+  return res
+}
+
+/*
+* 使用reduce实现flat
+* */
+// export const isType = type => target => `[Object ${type}]` === Object.prototype.toString.call(target);
+// const isArray = isType('Array')
+const selfFlat = function (depth = 1) {
+  const arr = Array.prototype.slice.call(this)
+  if(depth === 0) return arr
+  return arr.reduce((prev,cur, index) => {
+    if(Array.isArray(cur)) {
+      return [...prev, ...selfFlat.call(cur, depth -1)]
+    } else {
+      return [...prev, cur]
+    }
+  }, [])
+}
