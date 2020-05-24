@@ -13,7 +13,7 @@ function encode(val: string): string {
 
 export function buildURL(url: string, params?: any): string {
   if (!params) {
-    return url
+    return url!
   }
   let serializedParams
 

@@ -10,35 +10,48 @@
 
 <body>
   <script>
-    const a = {
-      valueOf() {
-        return '1'
-      },
-      toString() {
-        return false
-      }
-    }
-    const b = {
-      toString() {
-        return true
-      }
-    }
-    console.log(a + '1') // '11'
-    console.log(b + true) // 2
-    console.log(a + b) // 1true
-    console.log(a - b) // 0
+    // const a = {
+    //   valueOf() {
+    //     return '1'
+    //   },
+    //   toString() {
+    //     return false
+    //   }
+    // }
+    // const b = {
+    //   toString() {
+    //     return true
+    //   }
+    // }
+    // console.log(a + '1') // '11'
+    // console.log(b + true) // 2
+    // console.log(a + b) // 1true
+    // console.log(a - b) // 0
+    //
+    // const fn = function (a, b) {
+    //   const obj = {
+    //     func: (a, b) => {
+    //       console.log(this, arguments, obj.func.prototype, a, b)
+    //     }
+    //   }
+    //   return obj
+    // }
+    // const obj = fn(1, 2)
+    // obj.func(3) //
+    // new obj.func(4) //报错
 
-    const fn = function (a, b) {
-      const obj = {
-        func: (a, b) => {
-          console.log(this, arguments, obj.func.prototype, a, b)
-        }
-      }
-      return obj
+    const reverseStr = function () {
+      const str = String.prototype.slice.call(this);
+      console.log(str, this)
+      // return str.split('').reverse().join('')
+      return Array.from(str).reverse().join('')
     }
-    const obj = fn(1, 2)
-    obj.func(3) //
-    new obj.func(4) //报错
+    String.prototype.reverseStr = reverseStr
+    const str = 'abc'
+    console.log(str.reverseStr())
+    for(let i in str) {
+      console.log(i)
+    }
   </script>
 </body>
 

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/.env.master" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-h5/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/demo1.html" beforeDir="false" afterPath="$PROJECT_DIR$/test/demo1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-h5/src/views/home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-h5/src/views/home/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,7 @@
         <option value="Vue Single File Component" />
         <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -25,7 +27,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YN0W3C0bzeKBKA22Erf2qlpyq2" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -36,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-cli3/vue-h5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,9 +46,12 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\study\github-notes\typescript\ts-axios\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\study\github-notes\typescript\ts-axios\examples\simple" />
+      <recent name="E:\study\github-notes\typescript\ts-axios\examples" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-h5\src\utils" />
     </key>
   </component>
@@ -78,11 +83,21 @@
       <workItem from="1583465289564" duration="6612000" />
       <workItem from="1585056955336" duration="670000" />
       <workItem from="1587194565755" duration="3973000" />
+      <workItem from="1589468609870" duration="722000" />
+      <workItem from="1589594731606" duration="7758000" />
+      <workItem from="1589645577299" duration="306000" />
+      <workItem from="1589683754445" duration="2998000" />
+      <workItem from="1589812509993" duration="603000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/typescript/demos/demo1.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="684" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587196712119">
