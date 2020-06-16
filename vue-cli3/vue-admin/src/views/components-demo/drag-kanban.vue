@@ -6,11 +6,25 @@
       <Kanban :key="3" :list="list3" :group="group" class="kanban done" header-text="Done" />
     </div>
     <div class="drag-box">
-      <div class="drag-item" draggable="true" @dragstart="ondragstart">
+      <!--<div class="drag-item" draggable="true" @dragstart="ondragstart" @dragend="ondragend">
         drag
       </div>
       <div class="drop-box" @dragenter="ondragenter" @drop="ondrop" @dragover="ondragover">
         drop
+      </div>-->
+    </div>
+    <div class="drag-lists">
+      <div
+        v-for="(item,index) in dragList"
+        :key="item.text"
+        draggable="true"
+        class="drag-list"
+        @dragstart="(e) => ondragstart(e,index)"
+        @dragenter="ondragenter"
+        @drop="e => ondrop(e, index)"
+        @dragover="ondragover"
+      >
+        {{ item.text }}
       </div>
     </div>
   </div>
@@ -41,25 +55,44 @@ export default {
         { name: 'Mission', id: 8 },
         { name: 'Mission', id: 9 },
         { name: 'Mission', id: 10 }
+      ],
+      dragDom: null,
+      dragList: [
+        { text: 11 },
+        { text: 22 },
+        { text: 33 },
+        { text: 44 }
       ]
     }
   },
   methods: {
-    ondragstart(e) { // 保存拖动元素的引用(ref.)
+    ondragstart(e, index) { // 保存拖动元素的引用(ref.)
       // 使其半透明
       e.target.style.opacity = 0.5
+      this.dragDom = e.target
+      e.dataTransfer.setData('Text', index)
       console.log('start', e.dataTransfer)
     },
-    ondrop(e) {
-      e.target.style.background = ''
-      e.target.innerText = '11111'
-      console.log('drop', e.dataTransfer)
+    ondragend(e) {
+      console.log('end', e)
+      // e.target.style.display = 'none'
+    },
+    ondrop(e, index) {
+      // e.target.style.background = ''
+      // e.target.appendChild(this.dragDom)
+      // console.log('setData', e.dataTransfer.getData('Text'))
+      // console.log('drop', e.dataTransfer)
+      console.log('drop', index)
+      const startIndex = e.dataTransfer.getData('Text')
+      this.dragList.splice(index, 0, this.dragList.splice(startIndex, 1)[0])
+      console.log(this.dragList)
     },
     ondragenter(e) {
       e.preventDefault()
-      if (e.target.className === 'drop-box') {
-        e.target.style.background = 'purple'
-      }
+      // if (e.target.className === 'drop-box') {
+      //   e.target.style.background = 'purple'
+      // }
+      e.target.style.background = 'pink'
       console.log('enter', e)
     },
     ondragover(e) {
@@ -115,6 +148,20 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  .drag-lists {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    .drag-list  {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #cc9a9a;
+      margin-bottom: 20px;
     }
   }
 </style>
