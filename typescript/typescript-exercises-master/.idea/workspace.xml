@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d833493-dd53-4bb4-bd76-984eb14a41be" name="Default Changelist" comment="" />
+    <list default="true" id="2d833493-dd53-4bb4-bd76-984eb14a41be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../vue-cli3/vue-admin/src/views/components-demo/normalTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue-cli3/vue-admin/src/router/modules/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue-cli3/vue-admin/src/router/modules/components.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1dQdjs6Tik7LVD9B9aNBmdOLCdN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -16,9 +24,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../project/e05p00m00/src/E05P03M00/static_saas_website" />
+    <property name="last_opened_file_path" value="F:/BaiduNetdiskDownload/慕课网/Node.js开发仿知乎服务端 深入理解RESTful API(完整无密)/zhihu-api" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\study\github-notes\typescript\typescript-exercises-master\node_modules\typescript\lib" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -43,6 +51,9 @@
       <option name="presentableId" value="Default" />
       <updated>1592361388978</updated>
       <workItem from="1592361390374" duration="18762000" />
+      <workItem from="1592644735330" duration="688000" />
+      <workItem from="1593352738739" duration="648000" />
+      <workItem from="1594127798992" duration="111000" />
     </task>
     <servers />
   </component>
@@ -50,26 +61,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1592374042602">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1594127907810">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592374042602" />
-    <state width="1899" height="415" key="GridCell.Tab.0.bottom" timestamp="1592362348882">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594127907810" />
+    <state width="1899" height="118" key="GridCell.Tab.0.bottom" timestamp="1592653845831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="415" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592362348882" />
-    <state width="1899" height="415" key="GridCell.Tab.0.center" timestamp="1592362348882">
+    <state width="1899" height="118" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592653845831" />
+    <state width="1899" height="118" key="GridCell.Tab.0.center" timestamp="1592653845830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="415" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592362348882" />
-    <state width="1899" height="415" key="GridCell.Tab.0.left" timestamp="1592362348881">
+    <state width="1899" height="118" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592653845830" />
+    <state width="1899" height="118" key="GridCell.Tab.0.left" timestamp="1592653845830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="415" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592362348881" />
-    <state width="1899" height="415" key="GridCell.Tab.0.right" timestamp="1592362348882">
+    <state width="1899" height="118" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592653845830" />
+    <state width="1899" height="118" key="GridCell.Tab.0.right" timestamp="1592653845831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="415" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592362348882" />
+    <state width="1899" height="118" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592653845831" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592383523073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
