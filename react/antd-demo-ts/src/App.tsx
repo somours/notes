@@ -1,41 +1,22 @@
-import React, {FC} from 'react';
-import logo from './logo.svg';
-import {Button, Select } from "antd";
+import React, {FC, Fragment} from 'react';
 import './App.css';
+import Home from './views/home';
+import Login from './views/login';
+import PageC from "./views/pageC";
+import UserManage from './views/userManage/index';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 const  App: FC = () => {
-  const { Option } = Select;
-
-  function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Button type="primary">ant Button</Button>
-        <br/>
-        <Select defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-          <Option value="disabled" disabled>
-            Disabled
-          </Option>
-          <Option value="Yiminghe">yiminghe</Option>
-        </Select>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Fragment>
+        <BrowserRouter >
+          <Route path='/' exact component={Home}></Route>
+          <Route path='/login' exact component={Login}></Route>
+          <Route path='/pagec' exact component={PageC}></Route>
+          <Route path='/userManage' exact component={UserManage}></Route>
+        </BrowserRouter>
+      </Fragment>
     </div>
   );
 }
