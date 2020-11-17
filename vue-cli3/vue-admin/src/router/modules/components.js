@@ -95,6 +95,12 @@ const componentsRouter = {
       component: () => import('@/views/components-demo/drag-kanban'),
       name: 'DragKanbanDemo',
       meta: { title: 'Drag Kanban' }
+    },
+    {
+      path: 'normal-table',
+      component: () => import('@/views/components-demo/normalTable'),
+      name: 'NormalTable',
+      meta: { title: 'NormalTable' }
     }
   ]
 }
