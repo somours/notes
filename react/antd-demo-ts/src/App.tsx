@@ -1,7 +1,7 @@
 import React, {FC, Fragment} from 'react';
 import './App.css';
 import Home from './views/home';
-import Login from './views/login';
+import Login from './views/login/index';
 import PageC from "./views/pageC";
 import UserManage from './views/userManage/index';
 import {BrowserRouter, Route} from 'react-router-dom';

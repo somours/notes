@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {Form, Input, Button, Checkbox} from "antd";
 import {UserOutlined, LockOutlined} from '@ant-design/icons';
+import './index.css';
 
 const NormalLoginForm: FC = () => {
   const onFinish = (values:any) => {
@@ -9,6 +10,7 @@ const NormalLoginForm: FC = () => {
   return (
     <Form
       name="normal_login"
+      className="login-form"
       initialValues={{remember: true}}
       onFinish={onFinish}
     >
