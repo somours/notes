@@ -10,7 +10,7 @@ interface RequestResponse<T> {
 
 // 定义接口请求配置
 interface RequestConfig<T> extends AxiosRequestConfig {
-  initialData?: T;
+  initialData?: T; // 为返回数据的类型,也是数据的初始值赋值
   immediate: boolean;
   onSuccess?: (data: RequestResponse<T>) => void;
   onFail?: (data: RequestResponse<T>) => void;
