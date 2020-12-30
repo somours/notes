@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5dcf631e-95dd-40cd-b3fc-b9f131d666d2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/loading.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/noresult.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/js/components.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/js/request.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/styles/mixin.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/styles/reset.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/assets/styles/varible.styl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/ListBlock.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/TheHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/demo1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/global/Loading.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/global/Scroll.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/router/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/shims-vue.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/types/movie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/views/Category.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/views/Rank.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/views/Recommend.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/views/Search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/src/views/User.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-cli-vue3/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli-vue3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli-vue3/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli-vue3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli-vue3/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli-vue3/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli-vue3/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli-vue3/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli-vue3/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-cli-vue3/src/main.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mM75ut8EZGMBr7ps2CiWhygeWB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-cli-vue3" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="E:\somours\own\vue3\vue-cli-vue3\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="E:\somours\own\vue3\vue-cli-vue3\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\somours\own\vue3\vue-cli-vue3\src\assets\images" />
+      <recent name="E:\somours\own\vue3\vue-cli-vue3" />
+      <recent name="E:\somours\own\vue3\vue-cli-vue3\src" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5dcf631e-95dd-40cd-b3fc-b9f131d666d2" name="Default Changelist" comment="" />
+      <created>1609291425851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609291425851</updated>
+      <workItem from="1609291427348" duration="14117000" />
+      <workItem from="1609332155972" duration="2863000" />
+      <workItem from="1609337077888" duration="175000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1609337251836">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609337251836" />
+    <state x="567" y="220" width="786" height="600" key="find.popup" timestamp="1609329069426">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="567" y="220" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609329069426" />
+  </component>
+</project>

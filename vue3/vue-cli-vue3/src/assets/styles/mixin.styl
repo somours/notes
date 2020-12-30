@@ -1,0 +1,21 @@
+@import './varible.styl'
+
+page-fixed(t = 0)
+  position: fixed;
+  top: t;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 10;
+
+layout-flex(a = normal, b = normal)
+  display: flex;
+  align-items: a;
+  justify-content: b;
+  flex-wrap: wrap;
+
+text-ellipsis()
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
