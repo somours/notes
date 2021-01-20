@@ -76,36 +76,53 @@ export default defineComponent({
 });
 </script>
 <style lang="stylus" scoped>
-.list-block
+.list-block {
   padding: 15px;
   min-height: 200px;
   text-align: center;
-  .info
-    layout-flex(center,space-between)
+
+  .info {
+    layout-flex(center, space-between);
     margin-bottom: 15px;
     font-weight: bold;
     font-size: $font-size-large;
-    .iconfont
+
+    .iconfont {
       font-size: $font-size-large;
-  .list
-    layout-flex(normal,space-between)
-    .item
+    }
+  }
+
+  .list {
+    layout-flex(normal, space-between);
+
+    .item {
       width: 24%;
-      .image
+
+      .image {
         position: relative;
         height: 80%;
-        img
+
+        img {
           width: 100%;
           height: 100%;
-        .rate
+        }
+
+        .rate {
           position: absolute;
           right: 5px;
           bottom: 2px;
           color: #ffb400;
           font-weight: bold;
           font-style: italic;
-      .title
+        }
+      }
+
+      .title {
         padding: 10px 0;
         text-ellipsis();
         font-size: $font-size-base;
+      }
+    }
+  }
+}
 </style>

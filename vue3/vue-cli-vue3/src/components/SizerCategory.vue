@@ -1,3 +1,12 @@
+<!--
+ * @Author: somours
+ * @Date: 2020-12-31 00:36:59
+ * @LastEditTime: 2021-01-20 16:23:36
+ * @LastEditors: somours
+ * @Description: In User Settings Edit
+ * @FilePath: \vue-cli-vue3\src\components\SizerCategory.vue
+-->
+
 <template>
   <div class="sizer-category">
     <div class="category-list">
@@ -15,45 +24,48 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, toRef, reactive } from "vue";
-import {SizerState} from "@/types/sizer";
-import {useRequest} from "@/assets/js/request";
+import { SizerState } from "@/types/sizer";
+import { useRequest } from "@/assets/js/request";
 
 export default defineComponent({
   name: "SizerCategory",
   props: {
     sizerState: {}
   },
-  setup (props, {emit}) {
-    const categories = toRef<SizerState, 'categories'>(
+  setup(props, { emit }) {
+    const categories = toRef<SizerState, "categories">(
       props.sizerState,
-      'categories'
-    )
+      "categories"
+    );
     const state = reactive({
       selectKeys: categories.value || []
-    })
+    });
 
-    const {data} = useRequest('/api/category');
+    const { data } = useRequest("/api/category");
 
     const selectItem = (id: number) => {
       const arr = [...state.selectKeys];
       const idx = arr.indexOf(id);
-      if(idx>-1) {
-        arr.splice(idx,1)
+      if (idx > -1) {
+        arr.splice(idx, 1);
       } else {
-        arr.push(id)
+        arr.push(id);
       }
-      state.selectKeys = arr
-    }
+      state.selectKeys = arr;
+    };
 
     const confirm = () => {
-      emit('change', {categories: state.selectKeys})
-    }
+      emit("change", { categories: state.selectKeys });
+    };
 
     return {
-      state, categoryList: data, selectItem, confirm
-    }
+      state,
+      categoryList: data,
+      selectItem,
+      confirm
+    };
   }
 });
 </script>
