@@ -5,7 +5,7 @@
     <!--滚动列表-->
     <div class="movie-list" v-show="!loading">
       <Scroll v-show="movieList && movieList.length" :data="movieList">
-
+        <Card v-for="movie in movieList" :key="movie.id" :movie="movie" />
       </Scroll>
     </div>
     <Loading v-show="loading" height="80%" />

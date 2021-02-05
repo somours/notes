@@ -29,6 +29,7 @@ interface SizerRateState {
 }
 import { toRef, ref, reactive, onMounted, defineComponent } from "vue";
 import { SizerState } from "@/types/sizer";
+import useTouch from "@/assets/js/useTouch";
 export default defineComponent({
   name: "SizerRate",
   props: ["sizerRate"],
@@ -92,8 +93,36 @@ export default defineComponent({
     };
     const touchMove = (e: TouchEvent) => {
       if (!bar.value || !e.target) return;
+      const target = e.target as HTMLElement;
+      const width = bar.value.getBoundingClientRect().width;
+      // 另一个没动的评分点位
+      const idx = dots.value.indexOf(parseInt(target.style.left));
+      const otherRate = state.innerRate[1 - state.innerRate.indexOf(idx)];
+      // 控制滑动距离在0-总长度之间
+      const offsetWidth = Math.min(Math.max(0, e.touches[0].pageX - 30), width);
+      // 找到离滑动距离最接近的评分点位
+      const closetIndex = dots.value.reduce((r, c, i) => {
+        const a = Math.abs(Math.round(c - offsetWidth));
+        const b = Math.abs(Math.round(dots.value[r] - offsetWidth));
+        return a > b ? r : i;
+      }, idx);
+      target.style.left = `${dots.value[closetIndex]}px`;
+      // 评分升序排序
+      const rate = [otherRate, closetIndex].sort((a, b) => a - b);
+      state.innerRate = rate as [number, number];
+      setStyle();
     };
+    const touchEnd = (e: Event) => {
+      if (e.target) {
+        (e.target as HTMLElement).style.transform = `scale(1)`;
+      }
+    };
+
+    useTouch(barBtn1, { touchStart, touchMove, touchEnd });
+    useTouch(barBtn2, { touchStart, touchMove, touchEnd });
+
     return {
+      rate,
       state,
       bar,
       barBtn1,

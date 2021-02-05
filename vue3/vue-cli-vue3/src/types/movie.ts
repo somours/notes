@@ -15,12 +15,12 @@ export interface Movie {
   movieTypes: Category[];
 }
 
-interface Performer {
+export interface Performer {
   id: number;
   name: string;
 }
 
-interface Category {
+export interface Category {
   avatar: string;
   name: string
 }
