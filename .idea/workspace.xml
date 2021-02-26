@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/tools/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-admin/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-admin/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +15,8 @@
       <list>
         <option value="SCSS File" />
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -35,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project/e05p00m00/src/E05P03M00/static_regist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,19 +43,20 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\somours\own\notes\vue3\vue-cli-vue3\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\utils" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin" />
       <recent name="E:\study\github-notes\typescript\ts-axios\examples\simple" />
       <recent name="E:\study\github-notes\typescript\ts-axios\examples" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\somours\own\notes\notes\javaScript\tools" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\views" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -94,6 +95,8 @@
       <workItem from="1590666945277" duration="4102000" />
       <workItem from="1592206952100" duration="2397000" />
       <workItem from="1594003643345" duration="1806000" />
+      <workItem from="1614243002849" duration="3910000" />
+      <workItem from="1614302191520" duration="750000" />
     </task>
     <servers />
   </component>
@@ -106,17 +109,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="684" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587196712119">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614244696236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="684" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587196712119" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590668130239">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590668130239" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1594005473767">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594005473767" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614244696236" />
   </component>
 </project>
