@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-cli3/vue-admin/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-cli3/vue-admin/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project/e05p00m00/src/E05P03M00/static_regist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -94,6 +93,7 @@
       <workItem from="1590666945277" duration="4102000" />
       <workItem from="1592206952100" duration="2397000" />
       <workItem from="1594003643345" duration="1806000" />
+      <workItem from="1614258507732" duration="3300000" />
     </task>
     <servers />
   </component>
