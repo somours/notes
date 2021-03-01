@@ -51,9 +51,9 @@ export default defineComponent({
       isShow: false,
       isShowConfirm: false,
       keyword: '',
-      searchHistory: computed(() => {
+      searchHistory: computed(() =>
         store.state.searchHistory
-      })
+      )
     })
   }
 });
