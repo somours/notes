@@ -40,7 +40,7 @@ export default defineComponent({
     }));
 
     const initialData: Movie[] = [];
-    const { data, loading, fetch } = useRequest("/ap/movie", params, {
+    const { data, loading, fetch } = useRequest("/api/movie", params, {
       initialData
     });
     const handleSizerChange = (item: SizerState) => {
