@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/tools/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +96,11 @@
       <workItem from="1590666945277" duration="4102000" />
       <workItem from="1592206952100" duration="2397000" />
       <workItem from="1594003643345" duration="1806000" />
+      <workItem from="1614258507732" duration="3300000" />
       <workItem from="1614243002849" duration="3910000" />
       <workItem from="1614302191520" duration="4114000" />
       <workItem from="1614560564909" duration="10000" />
+      <workItem from="1614302191520" duration="750000" />
     </task>
     <servers />
   </component>

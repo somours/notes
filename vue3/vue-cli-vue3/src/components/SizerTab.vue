@@ -66,7 +66,7 @@ export default defineComponent({
     const getTabClass = (idx: number) => {
       return {
         active: idx === state.activeTab,
-        disable: idx === 2 && props.SizerState.status === "0"
+        disable: idx === 2 && props.sizerState.status === "0"
       };
     };
 
@@ -77,7 +77,7 @@ export default defineComponent({
         return;
       }
       // 当选择未上映时, 评分不可选
-      if (props.SizerState.status === "0" && idx === 2) return;
+      if (props.sizerState.status === "0" && idx === 2) return;
       state.activeTab = idx;
     };
 

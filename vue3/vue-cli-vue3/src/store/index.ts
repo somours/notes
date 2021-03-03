@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 import searchCache from "@/assets/js/searchCache";
 
 export default createStore({
@@ -12,12 +12,10 @@ export default createStore({
     deleteSearchHistory(state, data) {
       state.searchHistory = searchCache.removeOne(data);
     },
-    clearSearchHistory(state, data) {
+    clearSearchHistory(state) {
       state.searchHistory = searchCache.clearAll();
     }
   },
   actions: {},
-  modules: {
-
-  }
+  modules: {}
 });
