@@ -1,6 +1,6 @@
 <template>
   <div class="rank">
-    <Scroll v-show="movieList.length && !loading" :data="movieList">
+    <Scroll v-if="movieList.length && !loading" :data="movieList">
       <Card
         v-for="(movie, index) in movieList"
         :key="movie.id"

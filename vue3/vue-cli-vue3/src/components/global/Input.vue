@@ -5,7 +5,7 @@
       type="text"
       :value="inputValue"
       class="search-input"
-      @input="onChange()"
+      @input="onChange"
       :placeholder="placeholder"
     />
     <i
@@ -50,4 +50,22 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style lang="stylus" scoped>
+  .search-box
+    layout-flex(center, normal);
+    flex-wrap: nowrap;
+    padding: 0 10px;
+    background: $color-white;
+    border: $bordered;
+    border-radius: $border-radius-base;
+    .iconfont
+      font-size: $font-size-medium;
+      color:  $color-text-secondary;
+    .search-input
+      margin: 8px 20px 8px 5px;
+      font-size: $font-size-small;
+      border: none;
+      outline: none;
+      width: calc(100% - 60px);
+      color: $color-text-primary;
+</style>

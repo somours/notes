@@ -32,9 +32,9 @@ import { SizerState } from "@/types/sizer";
 import useTouch from "@/assets/js/useTouch";
 export default defineComponent({
   name: "SizerRate",
-  props: ["sizerRate"],
+  props: ["sizerState"],
   setup(props, { emit }) {
-    const rate = toRef<SizerState, "rate">(props.sizerRate, "rate");
+    const rate = toRef<SizerState, "rate">(props.sizerState, "rate");
     const state: SizerRateState = reactive({
       innerRate: rate.value || [0, 10],
       style: {}

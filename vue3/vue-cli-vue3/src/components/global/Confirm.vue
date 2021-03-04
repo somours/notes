@@ -1,6 +1,6 @@
 <template>
   <Transition name="confirm">
-    <div class="confirm">
+    <div v-show="showFlag" class="confirm">
       <div class="confirm-wrapper">
         <div class="confirm-content">
           <p class="text">{{ content }}</p>

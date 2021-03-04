@@ -22,7 +22,7 @@ interface Status {
 }
 export default defineComponent({
   name: "SizerStatus",
-  props: ["sizerStatus"],
+  props: ["sizerState"],
   setup(props, { emit }) {
     const status = toRef<SizerState, "status">(props.sizerState, "status");
     const statusList = [

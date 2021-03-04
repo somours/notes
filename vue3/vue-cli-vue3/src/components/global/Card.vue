@@ -12,7 +12,7 @@
           {{ movie.rate || "暂无" }}
         </span>
       </p>
-      <p class="pubdate">上映时间: {{ removeZh(movie.pubdate) }}</p>
+      <p v-else class="pubdate">上映时间: {{ removeZh(movie.pubdate) }}</p>
       <p class="cast">主演: {{ casts }}</p>
       <p class="duration">时长: {{ movie.duration || "未知" }}</p>
     </div>
@@ -33,6 +33,7 @@ export default defineComponent({
   props: ["movie", "sort"],
   setup(props: Readonly<CardProps>, { emit }) {
     const router = useRouter();
+
     return {
       removeZh(str: string) {
         return str.replace("(中国大陆)", "");
@@ -105,6 +106,8 @@ export default defineComponent({
         font-size: $font-size-base;
         font-weight: 700;
         color: $color-golden;
+    .pubdate
+      text-ellipsis();
     .cast
       width: 100%;
       text-ellipsis();

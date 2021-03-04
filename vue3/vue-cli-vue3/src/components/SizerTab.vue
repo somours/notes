@@ -79,6 +79,7 @@ export default defineComponent({
       // 当选择未上映时, 评分不可选
       if (props.sizerState.status === "0" && idx === 2) return;
       state.activeTab = idx;
+      console.log("state", state);
     };
 
     const activeComp = computed(() => {

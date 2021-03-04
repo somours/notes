@@ -70,4 +70,29 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="stylus">
+  .sizer-category
+    padding: 10px 25px;
+    .category-list
+      layout-flex();
+      .item
+        padding: 6px 12px;
+        margin: 0 7px 10px 0;
+        line-height: 1;
+        border-radius: $border-radius-base
+        font-size: $font-size-small;
+        color: $color-text-regular;
+        border: $bordered;
+        &.active
+          border-color: $color-golden;
+          background: $color-golden;
+          color: $color-white;
+    .confirm-btn
+      width: 60px;
+      height: 30px;
+      background: $color-blue;
+      color: $color-white;
+      border: none;
+      outline: none;
+      border-radius: $border-radius-small;
+</style>

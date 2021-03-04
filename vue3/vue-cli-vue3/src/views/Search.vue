@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <Scroll>
+<!--    <Scroll>-->
       <div class="search-input-wrapper">
         <Input v-model="state.keyword" @change="search" />
       </div>
@@ -33,9 +33,9 @@
           </div>
         </div>
       </div>
-    </Scroll>
-    <div class="movie-list">
-      <Scroll :data="movieList" v-show="movieList.length">
+<!--    </Scroll>-->
+    <div v-show="state.isShow" class="movie-list">
+      <Scroll :data="movieList" v-if="movieList.length">
         <Card v-for="movie in movieList" :key="movie.id" :movie="movie"></Card>
       </Scroll>
       <NoResult v-show="!movieList.length"></NoResult>

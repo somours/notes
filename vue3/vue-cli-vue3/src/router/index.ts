@@ -24,6 +24,26 @@ const routes: Array<RouteRecordRaw> = [
     path: "/search",
     name: "Search",
     component: () => import("@/views/Search.vue")
+  },
+  {
+    path: "/user",
+    name: "User",
+    component: () => import("@/views/User.vue")
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import('@/views/Login.vue')
+  },
+  {
+    path: '/list/:type',
+    name: 'List',
+    component: () => import("@/views/List.vue")
+  },
+  {
+    path: "/movie/:id",
+    name: "Movie",
+    component: () => import("@/views/Movie.vue")
   }
 ];
 const router = createRouter({

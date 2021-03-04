@@ -1,6 +1,8 @@
 <template>
   <div class="scroll-wrapper" ref="wrapper">
-    <slot></slot>
+    <div>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default defineComponent({
     const scroll = ref<BScroll>();
     // 初始化滚动
     const initScroll = () => {
-      if (!scroll.value) {
+      if (!wrapper.value) {
         return;
       }
       scroll.value = new BScroll(wrapper.value, {
@@ -64,9 +66,9 @@ export default defineComponent({
     });
     // mounted时
     onMounted(() => {
-      setTimeout(() => {
+      // setTimeout(() => {
         initScroll();
-      }, 500);
+      // }, 500);
     });
     // watch, 观测props.data变化
     watch(

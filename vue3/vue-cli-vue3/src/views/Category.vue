@@ -3,7 +3,7 @@
     <!--sizerTab-->
     <SizerTab :sizerState="state" @change="handleSizerChange"></SizerTab>
     <!--滚动列表-->
-    <div class="movie-list" v-show="!loading">
+    <div class="movie-list" v-if="!loading">
       <Scroll v-show="movieList && movieList.length" :data="movieList">
         <Card v-for="movie in movieList" :key="movie.id" :movie="movie" />
       </Scroll>
@@ -47,6 +47,7 @@ export default defineComponent({
       for (const key in item) {
         state[key] = item[key];
       }
+      fetch();
     };
     return { state, movieList: data, loading, fetch, handleSizerChange };
   }
