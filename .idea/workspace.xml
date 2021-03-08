@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue3/vue-cli-vue3/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/tools/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/promise/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/promise/promise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/javaScript/tools/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/javaScript/tools/util.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
         <option value="TypeScript File" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,9 +38,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project/e05p00m00/src/E05P03M00/static_saas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,17 +52,18 @@
     <property name="ts.external.directory.path" value="E:\somours\own\notes\vue3\vue-cli-vue3\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\somours\own\notes\notes\javaScript\promise" />
+      <recent name="E:\somours\own\notes\notes\javaScript\tools" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\utils" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin" />
       <recent name="E:\study\github-notes\typescript\ts-axios\examples\simple" />
       <recent name="E:\study\github-notes\typescript\ts-axios\examples" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\somours\own\notes\notes\javaScript\tools" />
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\views" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -101,6 +107,7 @@
       <workItem from="1614302191520" duration="4114000" />
       <workItem from="1614560564909" duration="10000" />
       <workItem from="1614302191520" duration="750000" />
+      <workItem from="1615166204783" duration="17856000" />
     </task>
     <servers />
   </component>

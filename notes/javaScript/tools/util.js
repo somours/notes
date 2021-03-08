@@ -53,7 +53,6 @@ const myBind = function (context, ...args) {
     result.prototype = Object.create(this.prototype);
   }
   return result;
-}
-
+};
 
 // Function.protoType.myBind = myBind;

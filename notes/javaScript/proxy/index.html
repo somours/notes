@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./index.js"></script>
+</head>
+<body>
+<script>
+  const el = dom.div({},
+    'Hello, my name is ',
+    dom.a({
+      href: 'http://www.baidu.com'
+    }, 'Mark'),
+    '. I like: ',
+    dom.ul({},
+      dom.li({}, 'the web'),
+      dom.li({}, 'Food'),
+      dom.li({}, '…actually that\'s it'),
+    )
+  )
+  document.body.appendChild(el);
+  // Proxy的apply
+  const twice = {
+    apply(target, ctx, args) {
+      console.log(Reflect.apply(...arguments));
+      return Reflect.apply(...arguments) * 2
+    }
+  };
+
+  function sum (left, right) {
+    return left + right;
+  };
+  const proxy = new Proxy(sum, twice);
+  const result = proxy(1,2);
+  console.log('result', result);
+</script>
+</body>
+</html>
