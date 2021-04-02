@@ -75,7 +75,6 @@ export default class Axios {
   }
   delete(url: string, config?: AxiosRequestConfig): AxiosPromise {
     return this._requestMethodWithoutData('delete', url, config)
-
   }
   head(url: string, config?: AxiosRequestConfig): AxiosPromise {
     return this._requestMethodWithoutData('head', url, config)

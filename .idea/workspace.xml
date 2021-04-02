@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/promise/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/promise/promise.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/html/demo1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/react-demo-js.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/javaScript/tools/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes/javaScript/tools/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/views/pageC.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/views/pageC.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/views/userManage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/views/userManage/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1YN0W3C0bzeKBKA22Erf2qlpyq2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -107,7 +119,11 @@
       <workItem from="1614302191520" duration="4114000" />
       <workItem from="1614560564909" duration="10000" />
       <workItem from="1614302191520" duration="750000" />
-      <workItem from="1615166204783" duration="17856000" />
+      <workItem from="1615166204783" duration="19921000" />
+      <workItem from="1615261205320" duration="686000" />
+      <workItem from="1615424252300" duration="7365000" />
+      <workItem from="1617157267106" duration="1109000" />
+      <workItem from="1617239901898" duration="12510000" />
     </task>
     <servers />
   </component>
@@ -120,9 +136,9 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614560573706">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1615460447602">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614560573706" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615460447602" />
   </component>
 </project>

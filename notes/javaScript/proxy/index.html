@@ -21,19 +21,22 @@
   )
   document.body.appendChild(el);
   // Proxy的apply
-  const twice = {
-    apply(target, ctx, args) {
-      console.log(Reflect.apply(...arguments));
-      return Reflect.apply(...arguments) * 2
-    }
-  };
+  // const twice = {
+  //   apply(target, ctx, args) {
+  //     console.log(Reflect.apply(...arguments));
+  //     return Reflect.apply(...arguments) * 2
+  //   }
+  // };
+  //
+  // function sum (left, right) {
+  //   return left + right;
+  // };
+  // const proxy = new Proxy(sum, twice);
+  // const result = proxy(1,2);
+  // console.log('result', result);
 
-  function sum (left, right) {
-    return left + right;
-  };
-  const proxy = new Proxy(sum, twice);
-  const result = proxy(1,2);
-  console.log('result', result);
+  // Proxy的getOwnPropertyDescriptor
+
 </script>
 </body>
 </html>
