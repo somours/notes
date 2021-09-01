@@ -57,9 +57,9 @@ class AppLayout extends Component {
             }}
           >
             <BrowserRouter>
-              <Route path="/layout/demo1/" component={Demo1}></Route>
-              <Route path="/layout/demo2" component={Demo2}></Route>
-              <Route path="/layout/demo3" component={Demo3}></Route>
+              <Route path="/demo1/" component={Demo1}></Route>
+              <Route path="/demo2" component={Demo2}></Route>
+              <Route path="/demo3" component={Demo3}></Route>
             </BrowserRouter>
           </Content>
         </Layout>
