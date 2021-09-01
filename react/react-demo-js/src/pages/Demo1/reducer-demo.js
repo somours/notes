@@ -22,3 +22,27 @@ export default function ReducerDemo (props) {
     </div>
   )
 }
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'increment':
+      return {number: state.number  + 1};
+    case 'decrement':
+      return {number: state.number - 1};
+    default:
+      throw new Error();
+  }
+}
+const init = (initialState) => ({number: initialState})
+export const ReducerDemo2 = () => { // 初始值为{number: 0}
+  const [state, dispatch] = useReducer(reducer, initialState, init);
+  return <>
+    <div>reducer demo</div>
+    Count: {state.number}
+    <div>
+      <Button type={"primary"} onClick={() => dispatch({type: 'increment'})}>加</Button>
+      <Button type={"primary"} onClick={() => dispatch({type: 'decrement'})}>减</Button>
+    </div>
+  </>
+}
