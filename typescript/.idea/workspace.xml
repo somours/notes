@@ -2,47 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3d68b67-0e58-46b7-bbcf-a67dca809f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/typescript-exercises-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-00/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-01/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-02/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-03/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-04/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-05/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-06/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-07/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-08/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-10/declarations/str-utils/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-10/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-11/declarations/stats/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-11/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-12/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-12/module-augmentations/date-wizard/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/admins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/admins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/initial-users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/views/home/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-cli3/vue-admin/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-cli3/vue-admin/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +27,19 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../project/e05p00m00/src/E05P03M00/static_admin" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -81,6 +53,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -92,13 +65,22 @@
       <option name="presentableId" value="Default" />
       <updated>1592382920893</updated>
       <workItem from="1592382922019" duration="2015000" />
+      <workItem from="1628818292579" duration="2315000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section1/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section2/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section3/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section4/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section5/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section6/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section7/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section8/index.js" />
         <option value="$PROJECT_DIR$/demos/demo1.js" />
       </list>
     </option>

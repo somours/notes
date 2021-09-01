@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notes/html/demo1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/react-demo-js.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/views/home/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/notes/javaScript/proxy/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/views/pageC.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/views/pageC.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/antd-demo-ts/src/views/userManage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/react/antd-demo-ts/src/views/userManage/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,20 +23,15 @@
       <list>
         <option value="SCSS File" />
         <option value="TypeScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1YN0W3C0bzeKBKA22Erf2qlpyq2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -46,36 +39,39 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue3/vue3-demo/vite-project" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/nuxt/my_nuxt/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="E:\somours\own\notes\nuxt\my_nuxt\node_modules\eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="E:\somours\own\notes\vue3\vue-cli-vue3\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="E:\somours\own\notes\react\antd-demo-ts\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\somours\own\notes\vue3\vue3-demo\vite-project" />
+      <recent name="E:\somours\own\notes\vue3\vue3-demo\vite-project\src\views" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\utils" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
+      <recent name="E:\somours\own\notes\vue-cli3\vue-admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\somours\own\notes\notes\javaScript\promise" />
       <recent name="E:\somours\own\notes\notes\javaScript\tools" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
       <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src\utils" />
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin\src" />
-      <recent name="E:\somours\own\notes\vue-cli3\vue-admin" />
-      <recent name="E:\study\github-notes\typescript\ts-axios\examples\simple" />
-      <recent name="E:\study\github-notes\typescript\ts-axios\examples" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -90,6 +86,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -124,21 +121,28 @@
       <workItem from="1615424252300" duration="7365000" />
       <workItem from="1617157267106" duration="1109000" />
       <workItem from="1617239901898" duration="12510000" />
+      <workItem from="1622706772927" duration="9075000" />
+      <workItem from="1622775619126" duration="7011000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/typescript/demos/demo1.js" />
       </list>
     </option>
   </component>
-  <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1615460447602">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615460447602" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
