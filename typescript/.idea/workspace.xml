@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3d68b67-0e58-46b7-bbcf-a67dca809f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/typescript-exercises-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-00/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-01/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-02/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-03/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-04/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-05/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-06/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-07/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-08/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-10/declarations/str-utils/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-10/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-11/declarations/stats/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-11/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-12/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-12/module-augmentations/date-wizard/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/admins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-13/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/admins.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-14/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-15/initial-users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/typescript-exercises-master/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue-cli3/vue-admin/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue-cli3/vue-admin/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +27,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="E:\study\github-notes\typescript\typescript-exercises-master\node_modules\typescript\lib" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -92,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1592382920893</updated>
       <workItem from="1592382922019" duration="2015000" />
+      <workItem from="1617286752641" duration="1898000" />
     </task>
     <servers />
   </component>
