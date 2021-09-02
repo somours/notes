@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       <p>
-        我是demo2
+        我是demo2, css实现文字超出,折叠收起的功能
       </p>
       <div className="wraper">
         <input type="checkbox" className="exp" id="exp" />
