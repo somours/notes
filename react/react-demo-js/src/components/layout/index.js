@@ -42,7 +42,7 @@ class AppLayout extends Component {
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }}>
+          <Header className="site-layout-background" style={{ padding: '0 15px'}}>
             {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
               className: 'trigger',
               onClick: this.toggle,
@@ -57,9 +57,9 @@ class AppLayout extends Component {
             }}
           >
             <BrowserRouter>
-              <Route path="/layout/demo1/" component={Demo1}></Route>
-              <Route path="/layout/demo2" component={Demo2}></Route>
-              <Route path="/layout/demo3" component={Demo3}></Route>
+              <Route path="/demo1/" component={Demo1}></Route>
+              <Route path="/demo2" component={Demo2}></Route>
+              <Route path="/demo3" component={Demo3}></Route>
             </BrowserRouter>
           </Content>
         </Layout>

@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3d68b67-0e58-46b7-bbcf-a67dca809f79" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/views/home/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" afterDir="false" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,18 +31,23 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../project/e05p00m00/src/E05P03M00/static_admin" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+<<<<<<< HEAD
     <property name="ts.external.directory.path" value="E:\study\github-notes\typescript\typescript-exercises-master\node_modules\typescript\lib" />
+=======
+    <property name="ts.external.directory.path" value="E:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -41,6 +61,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -52,14 +73,26 @@
       <option name="presentableId" value="Default" />
       <updated>1592382920893</updated>
       <workItem from="1592382922019" duration="2015000" />
+<<<<<<< HEAD
       <workItem from="1617286752641" duration="1898000" />
+=======
+      <workItem from="1628818292579" duration="2315000" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section1/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section2/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section3/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section4/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section5/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section6/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section7/index.js" />
+        <option value="$PROJECT_DIR$/资料/ts-axios-doc-master/ts-axios-doc/examples/section8/index.js" />
         <option value="$PROJECT_DIR$/demos/demo1.js" />
       </list>
     </option>
