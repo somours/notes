@@ -1,4 +1,12 @@
-import { isDate, isObject } from './util'
+/*
+ * @Author: your name
+ * @Date: 2021-12-06 11:15:17
+ * @LastEditTime: 2021-12-10 16:57:52
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \ts-axios2\src\helpers\url.ts
+ */
+import { isDate, isPlainObject } from './util'
 
 function encode (val: string):string {
   return encodeURIComponent(val)
@@ -31,7 +39,7 @@ export function buildUrl (url: string, params?: any):string {
     values.forEach((val) => {
       if(isDate(val)) {
         val = val.toISOString()
-      } else if (isObject(val)) {
+      } else if (isPlainObject(val)) {
         val = JSON.stringify(val)
       }
       parts.push(`${encode(key)}=${encode(val)}`)
