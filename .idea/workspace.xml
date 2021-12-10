@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55306a60-0ce2-4e70-8a24-01f58ba58271" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/views/home/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue3/vue3-demo/vite-project/src/views/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/react/react-demo-js/src/pages/Demo2/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue3/vue3-demo/vite-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/typescript/ts-axios2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -123,6 +115,16 @@
       <workItem from="1617239901898" duration="12510000" />
       <workItem from="1622706772927" duration="9075000" />
       <workItem from="1622775619126" duration="7011000" />
+      <workItem from="1637649003881" duration="2550000" />
+      <workItem from="1637715942276" duration="1906000" />
+      <workItem from="1637802108595" duration="1196000" />
+      <workItem from="1637888908960" duration="1949000" />
+      <workItem from="1638148047843" duration="3344000" />
+      <workItem from="1638242107477" duration="6336000" />
+      <workItem from="1638320385347" duration="9940000" />
+      <workItem from="1638407499725" duration="7751000" />
+      <workItem from="1638501089761" duration="10123000" />
+      <workItem from="1638757327364" duration="6600000" />
     </task>
     <servers />
   </component>
@@ -144,5 +146,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
