@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3d68b67-0e58-46b7-bbcf-a67dca809f79" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript-exercises-master/exercises/exercise-09/index.ts" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../vue3/vue3-demo/vite-project/.eslintignore" afterDir="false" />
@@ -14,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/es6,7,8.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../notes/x-mind/vuex.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react/react-demo-js/src/pages/Demo2/index.js" afterDir="false" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +42,12 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+<<<<<<< HEAD
+    <property name="ts.external.directory.path" value="E:\study\github-notes\typescript\typescript-exercises-master\node_modules\typescript\lib" />
+=======
     <property name="ts.external.directory.path" value="E:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -65,7 +73,11 @@
       <option name="presentableId" value="Default" />
       <updated>1592382920893</updated>
       <workItem from="1592382922019" duration="2015000" />
+<<<<<<< HEAD
+      <workItem from="1617286752641" duration="1898000" />
+=======
       <workItem from="1628818292579" duration="2315000" />
+>>>>>>> 2c2b764a98101ebd78f8348224132d9d497579bc
     </task>
     <servers />
   </component>
