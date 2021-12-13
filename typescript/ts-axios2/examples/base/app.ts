@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-12-06 11:53:35
- * @LastEditTime: 2021-12-10 17:37:49
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-12-13 09:54:37
+ * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\base\app.ts
  */
@@ -95,4 +95,27 @@ axios({
   method: 'post',
   url: '/base/post',
   data: searchParams
+})
+
+axios({
+  method: 'post',
+  url: '/base/post',
+  data: {
+    a: 1,
+    b: 2
+  }
+}).then(res => {
+  console.log(res)
+})
+
+axios({
+  method: 'post',
+  url: '/base/post',
+  responseType: 'json',
+  data: {
+    a: 3, 
+    b: 4
+  }
+}).then(res => {
+  console.log(res)
 })

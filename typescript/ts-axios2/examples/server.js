@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 14:06:48
- * @LastEditTime: 2021-12-10 17:16:54
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-12-13 16:27:22
+ * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\server.js
  */
@@ -33,6 +33,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 const router = express.Router()
+
+registerExtendRouter()
+
 router.get('/simple/get', function(req, res) {
   res.json({
     msg: 'hello world'
@@ -57,6 +60,68 @@ router.post('/base/buffer', function(req, res) {
     res.json(buf.toJSON())
   })
 })
+
+router.get('/error/get', function(req, res) {
+  if(Math.random() > 0.5) {
+    res.json({
+      msg: 'hello world'
+    })
+  } else {
+    res.status(500)
+    res.end()
+  }
+})
+ router.get('/error/timeout', function(req, res) {
+   setTimeout(() => {
+     res.json({
+       msg: `hello world`
+     })
+   }, 3000);
+ })
+
+ function registerExtendRouter () {
+  router.get('/extend/get', function(req, res) {
+    res.json({
+      msg: 'hello world'
+    })
+  })
+
+  router.options('/extend/options', function(req, res) {
+    res.end()
+  })
+
+  router.delete('/extend/delete', function(req, res) {
+    res.end()
+  })
+
+  router.head('/extend/head', function(req, res) {
+    res.end()
+  })
+
+  router.post('/extend/post', function(req, res) {
+    res.json(req.body)
+  })
+
+  router.put('/extend/put', function(req, res) {
+    res.json(req.body)
+  })
+
+  router.patch('/extend/patch', function(req, res) {
+    res.json(req.body)
+  })
+
+  router.get('/extend/user', function(req, res) {
+    res.json({
+      code: 0,
+      message: 'ok',
+      result: {
+        name: 'jack',
+        age: 18
+      }
+    })
+  })
+}
+
 
 app.use(router)
 
