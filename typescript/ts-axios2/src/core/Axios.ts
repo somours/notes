@@ -10,6 +10,7 @@ import { ResolvedFn, RejectedFn } from './../types/index'
 import { AxiosPromise, AxiosRequestConfig, Method, AxiosResponse } from '../types'
 import dispatchRequest from './diapatchRequest'
 import InterceptorManager from './interceptorManage'
+import mergeConfig from './mergeConfig'
 
 interface Interceptors {
   request: InterceptorManager<AxiosRequestConfig>
@@ -40,6 +41,10 @@ export default class Axios {
     } else {
       config = url
     }
+
+    // 此处需要合并默认的, 因为外部可能是直接调用axios
+    config = mergeConfig(this.defaults, config)
+    config.method = config.method.toLowerCase()
     const chain: PromiseChain[] = [
       {
         resolved: dispatchRequest,

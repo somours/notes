@@ -36,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/typescript/ts-axios2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -125,14 +125,23 @@
       <workItem from="1639124201378" duration="244000" />
       <workItem from="1639124448770" duration="356000" />
       <workItem from="1639125067809" duration="3000" />
+      <workItem from="1639494762549" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/typescript/demos/demo1.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section8/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section7/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section6/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section5/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section4/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section3/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section2/index.js" />
+        <option value="$PROJECT_DIR$/typescript/资料/ts-axios-doc-master/ts-axios-doc/examples/section1/index.js" />
       </list>
     </option>
   </component>
@@ -141,11 +150,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1639494812730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1639494812730" />
   </component>
 </project>

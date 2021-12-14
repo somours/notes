@@ -20,7 +20,6 @@ function dispatchRequest(config: AxiosRequestConfig): AxiosPromise {
 function processConfig(config: AxiosRequestConfig): void {
   config.url = transformUrl(config)
   config.data = transform(config.data, config.headers, config.transformRequest)
-  debugger
   config.headers = flattenHeaders(config.headers, config.method!)
 }
 
