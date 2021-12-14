@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 14:06:48
- * @LastEditTime: 2021-12-13 16:27:22
+ * @LastEditTime: 2021-12-14 16:41:13
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\server.js
@@ -34,50 +34,65 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 const router = express.Router()
 
+registerSimleRouter()
+
+registerBaseRouter()
+
+registerErrorRouter()
+
 registerExtendRouter()
 
-router.get('/simple/get', function(req, res) {
-  res.json({
-    msg: 'hello world'
-  })
-})
-router.get('/base/get', function(req, res) {
-  res.json(req.query)
-})
-router.post('/base/post', function(req, res) {
-  res.json(req.body)
-})
+registerInterceptorRouter()
 
-router.post('/base/buffer', function(req, res) {
-  let msg = [];
-  req.on('data', (chunk) => {
-    if(chunk) {
-      msg.push(chunk)
-    }
-  })
-  req.on('end', () => {
-    let buf = Buffer.concat(msg)
-    res.json(buf.toJSON())
-  })
-})
+registerConfigRouter()
 
-router.get('/error/get', function(req, res) {
-  if(Math.random() > 0.5) {
+function registerSimleRouter() {
+  router.get('/simple/get', function(req, res) {
     res.json({
       msg: 'hello world'
     })
-  } else {
-    res.status(500)
-    res.end()
-  }
-})
- router.get('/error/timeout', function(req, res) {
-   setTimeout(() => {
-     res.json({
-       msg: `hello world`
-     })
-   }, 3000);
- })
+  })
+}
+function registerBaseRouter () {
+  router.get('/base/get', function(req, res) {
+    res.json(req.query)
+  })
+  router.post('/base/post', function(req, res) {
+    res.json(req.body)
+  })
+  
+  router.post('/base/buffer', function(req, res) {
+    let msg = [];
+    req.on('data', (chunk) => {
+      if(chunk) {
+        msg.push(chunk)
+      }
+    })
+    req.on('end', () => {
+      let buf = Buffer.concat(msg)
+      res.json(buf.toJSON())
+    })
+  })
+}
+function registerErrorRouter() {
+  router.get('/error/get', function(req, res) {
+    if(Math.random() > 0.5) {
+      res.json({
+        msg: 'hello world'
+      })
+    } else {
+      res.status(500)
+      res.end()
+    }
+  })
+   router.get('/error/timeout', function(req, res) {
+     setTimeout(() => {
+       res.json({
+         msg: `hello world`
+       })
+     }, 3000);
+   })
+}
 
  function registerExtendRouter () {
   router.get('/extend/get', function(req, res) {
@@ -121,6 +136,18 @@ router.get('/error/get', function(req, res) {
     })
   })
 }
+
+ function registerInterceptorRouter () {
+   router.get('/interceptor/get', function(req, res){
+     res.end('hello')
+   })
+ }
+
+ function registerConfigRouter () {
+   router.post('/config/post', function(req,res) {
+     res.json(req.body)
+   })
+ }
 
 
 app.use(router)
