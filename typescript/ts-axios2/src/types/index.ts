@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 11:45:59
- * @LastEditTime: 2021-12-16 17:26:52
+ * @LastEditTime: 2021-12-17 11:21:09
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\types\index.ts
@@ -80,6 +80,9 @@ export interface AxiosInstance extends Axios {
 
 export interface AxiosStatic extends AxiosInstance {
   create(config?: AxiosRequestConfig): AxiosInstance
+  CancelToken: CancelTokenStatic
+  Cancel: CancelStatic
+  isCancel: (value: any) => boolean
 }
 
 export interface AxiosInterceptorManager<T> {
@@ -100,8 +103,9 @@ export interface AxiosTransformer {
 }
 
 export interface CancelToken {
-  promise: Promise<string>
-  reason?: string
+  promise: Promise<Cancel>
+  reason?: Cancel
+  throwIfRequested(): void
 }
 
 export interface Canceler {
@@ -109,4 +113,22 @@ export interface Canceler {
 }
 export interface CancelExecutor {
   (cancel: Canceler): void
+}
+
+export interface CancelTokenSourece {
+  token: CancelToken
+  cancel: Canceler
+}
+
+export interface CancelTokenStatic {
+  new (executor: CancelExecutor): CancelToken
+  source(): CancelTokenSourece
+}
+
+export interface Cancel {
+  message?: string
+}
+
+export interface CancelStatic {
+  new (message?: string): Cancel
 }

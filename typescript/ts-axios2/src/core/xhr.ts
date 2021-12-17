@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 11:53:29
- * @LastEditTime: 2021-12-14 17:52:56
+ * @LastEditTime: 2021-12-17 14:00:55
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\xhr.ts
@@ -12,7 +12,7 @@ import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types/index'
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
   return new Promise((resolve, reject) => {
-    const { data = null, url, method = 'get', headers, responseType, timeout } = config
+    const { data = null, url, method = 'get', headers, responseType, timeout, cancelToken } = config
     // console.log('xhr', url, config)
     const request = new XMLHttpRequest()
     if (timeout) {
@@ -22,6 +22,17 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       request.responseType = responseType
     }
     request.open(method.toUpperCase(), url!, true)
+
+    if (cancelToken) {
+      cancelToken.promise
+        .then(reason => {
+          request.abort()
+          reject(reason)
+        })
+        .catch(e => {
+          console.log('cancel', e)
+        })
+    }
 
     request.onreadystatechange = function handleLoad() {
       if (request.readyState !== 4) {
@@ -69,7 +80,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       reject(createError('Network Error', config, null, request))
     }
 
-    console.log('xhr', headers)
+    // console.log('xhr', headers)
     Object.keys(headers).forEach(name => {
       if (data === null && name.toLowerCase() === 'content-type') {
         delete headers[name]

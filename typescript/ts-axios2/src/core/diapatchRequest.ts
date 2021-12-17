@@ -3,7 +3,7 @@
  * @Author: somours
  * @Date: 2021-12-13 14:32:51
  * @LastEditors: somours
- * @LastEditTime: 2021-12-14 18:00:21
+ * @LastEditTime: 2021-12-17 11:24:17
  */
 import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types/index'
 import xhr from './xhr'
@@ -11,10 +11,17 @@ import { buildUrl } from '../helpers/url'
 import { flattenHeaders } from '../helpers/headers'
 import transform from './transform'
 function dispatchRequest(config: AxiosRequestConfig): AxiosPromise {
+  throwIfCancellationRequested(config)
   processConfig(config)
   return xhr(config).then(res => {
     return transformResponseData(res)
   })
+}
+
+function throwIfCancellationRequested(config: AxiosRequestConfig): void {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested()
+  }
 }
 
 function processConfig(config: AxiosRequestConfig): void {
