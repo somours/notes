@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 14:06:48
- * @LastEditTime: 2021-12-17 14:02:10
+ * @LastEditTime: 2021-12-20 17:22:54
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\server.js
@@ -47,6 +47,8 @@ registerInterceptorRouter()
 registerConfigRouter()
 
 registerCancelRouter()
+
+registerMoreRouter()
 
 function registerSimleRouter() {
   router.get('/simple/get', function(req, res) {
@@ -164,6 +166,26 @@ function registerErrorRouter() {
    })
  }
 
+  function registerMoreRouter () {
+    router.get('/more/get', function(req, res) {
+      res.json(req.cookies)
+    })
+   router.post('/more/post', function (req, res) {
+     const auth = req.headers.authorization
+     const [type, credentials] = auth.split(' ')
+     console.log(atob(credentials))
+     const [username, password] = atob(credentials).split(':')
+     if(type === 'Basic' && username === 'Yee' && password === '123456') {
+       res.json(req.body)
+     } else {
+       res.end('UnAuthorization')
+     }
+   })
+   router.get('/more/304', function(req, res) {
+     res.status(304)
+     res.end()
+   })
+ }
 app.use(router)
 
 const port = process.env.PORT || 8000

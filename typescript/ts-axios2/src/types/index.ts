@@ -1,7 +1,8 @@
+import { AxiosRequestConfig } from './index'
 /*
  * @Author: your name
  * @Date: 2021-12-03 11:45:59
- * @LastEditTime: 2021-12-17 11:21:09
+ * @LastEditTime: 2021-12-20 17:44:28
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\types\index.ts
@@ -18,6 +19,9 @@ export interface AxiosRequestConfig {
   transformRequest?: AxiosTransformer | AxiosTransformer[]
   transformResponse?: AxiosTransformer | AxiosTransformer[]
   cancelToken?: CancelToken
+  auth?: AxiosBasicCredentials
+  paramsSerializer?: (params: any) => string
+  validateStatus?: (status: number) => boolean
   [propName: string]: any
 }
 
@@ -57,6 +61,7 @@ export interface AxiosError extends Error {
 }
 
 export interface Axios {
+  getUri?(config: AxiosRequestConfig): string
   defaults: AxiosRequestConfig
   interceptors: {
     request: AxiosInterceptorManager<AxiosRequestConfig>
@@ -83,6 +88,13 @@ export interface AxiosStatic extends AxiosInstance {
   CancelToken: CancelTokenStatic
   Cancel: CancelStatic
   isCancel: (value: any) => boolean
+  all<T>(promise: Array<T | Promise<T>>): Promise<T[]>
+  spread<T, R>(callback: (...args: T[]) => R): (arr: T[]) => R
+  Axios: AxiosClassStatic
+}
+
+export interface AxiosClassStatic {
+  new (config: AxiosRequestConfig): Axios
 }
 
 export interface AxiosInterceptorManager<T> {
@@ -131,4 +143,9 @@ export interface Cancel {
 
 export interface CancelStatic {
   new (message?: string): Cancel
+}
+
+export interface AxiosBasicCredentials {
+  username: string
+  password: string
 }

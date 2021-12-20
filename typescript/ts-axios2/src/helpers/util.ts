@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 15:41:55
- * @LastEditTime: 2021-12-14 16:23:55
+ * @LastEditTime: 2021-12-20 16:02:58
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\helpers\util.ts
@@ -20,6 +20,10 @@ export function isObject(val: any): val is Object {
 
 export function isPlainObject(val: any): val is Object {
   return toString.call(val) === '[object Object]'
+}
+
+export function isURLSearchParams(val: any): val is URLSearchParams {
+  return typeof val !== 'undefined' && val instanceof URLSearchParams
 }
 
 export function extend<T, U>(to: T, from: U): T & U {

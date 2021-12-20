@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 11:53:29
- * @LastEditTime: 2021-12-17 14:00:55
+ * @LastEditTime: 2021-12-20 17:18:11
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\xhr.ts
@@ -12,7 +12,17 @@ import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types/index'
 
 export default function xhr(config: AxiosRequestConfig): AxiosPromise {
   return new Promise((resolve, reject) => {
-    const { data = null, url, method = 'get', headers, responseType, timeout, cancelToken } = config
+    const {
+      data = null,
+      url,
+      method = 'get',
+      headers,
+      responseType,
+      timeout,
+      cancelToken,
+      auth,
+      validateStatus
+    } = config
     // console.log('xhr', url, config)
     const request = new XMLHttpRequest()
     if (timeout) {
@@ -20,6 +30,9 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     }
     if (responseType) {
       request.responseType = responseType
+    }
+    if (auth) {
+      headers['Authorization'] = 'Basic ' + btoa(auth.username + ':' + auth.password)
     }
     request.open(method.toUpperCase(), url!, true)
 
@@ -58,7 +71,7 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     }
 
     function handleResponse(response: AxiosResponse) {
-      if (response.status >= 200 && response.status < 300) {
+      if (!validateStatus || validateStatus(response.status)) {
         resolve(response)
       } else {
         reject(

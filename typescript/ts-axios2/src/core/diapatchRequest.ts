@@ -3,11 +3,11 @@
  * @Author: somours
  * @Date: 2021-12-13 14:32:51
  * @LastEditors: somours
- * @LastEditTime: 2021-12-17 11:24:17
+ * @LastEditTime: 2021-12-20 16:18:34
  */
 import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types/index'
 import xhr from './xhr'
-import { buildUrl } from '../helpers/url'
+import { buildUrl, combineURL, isAbsoluteUrl } from '../helpers/url'
 import { flattenHeaders } from '../helpers/headers'
 import transform from './transform'
 function dispatchRequest(config: AxiosRequestConfig): AxiosPromise {
@@ -31,8 +31,11 @@ function processConfig(config: AxiosRequestConfig): void {
 }
 
 function transformUrl(config: AxiosRequestConfig): string {
-  const { url, params } = config
-  return buildUrl(url!, params)
+  let { url, params, baseUrl, paramsSerializer } = config
+  if (baseUrl && !isAbsoluteUrl(url!)) {
+    url = combineURL(baseUrl, url)
+  }
+  return buildUrl(url!, params, paramsSerializer)
 }
 
 // function transformRequestData(config: AxiosRequestConfig): any {
