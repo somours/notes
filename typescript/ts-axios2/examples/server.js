@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 14:06:48
- * @LastEditTime: 2021-12-20 17:22:54
+ * @LastEditTime: 2021-12-22 10:06:35
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\server.js
@@ -184,6 +184,10 @@ function registerErrorRouter() {
    router.get('/more/304', function(req, res) {
      res.status(304)
      res.end()
+   })
+   router.post('/more/upload', function(req, res) {
+     console.log(req.body, req.files)
+     res.end('upload success')
    })
  }
 app.use(router)

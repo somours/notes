@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 15:41:55
- * @LastEditTime: 2021-12-20 16:02:58
+ * @LastEditTime: 2021-12-22 09:31:22
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\helpers\util.ts
@@ -31,6 +31,10 @@ export function extend<T, U>(to: T, from: U): T & U {
     ;(to as T & U)[key] = from[key] as any
   }
   return to as T & U
+}
+
+export function isFormData(val: any): boolean {
+  return val !== 'undefined' && val instanceof FormData
 }
 
 export function deepMerge(...objs: any[]): any {
