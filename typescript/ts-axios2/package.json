@@ -126,6 +126,7 @@
     "webpack-hot-middleware": "2.24.3"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "css-loader": "^6.5.1",
     "nprogress": "^0.2.0",
     "style-loader": "^3.3.1"
