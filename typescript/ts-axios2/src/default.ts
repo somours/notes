@@ -3,7 +3,7 @@
  * @Author: somours
  * @Date: 2021-12-14 15:13:40
  * @LastEditors: somours
- * @LastEditTime: 2021-12-20 17:29:53
+ * @LastEditTime: 2021-12-27 15:14:29
  */
 
 import { transformRequest, transformResponse } from './helpers/data'
@@ -13,6 +13,9 @@ import { AxiosRequestConfig } from './types/index'
 const defaults: AxiosRequestConfig = {
   method: 'get',
   timeout: 0,
+  xsrfCookieName: 'XSRF-TOKEN',
+
+  xsrfHeaderName: 'X-XSRF-TOKEN',
   headers: {
     common: {
       Accept: 'application/json, text/plain, */*'

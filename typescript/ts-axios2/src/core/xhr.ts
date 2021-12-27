@@ -1,13 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2021-12-03 11:53:29
- * @LastEditTime: 2021-12-22 10:43:17
+ * @LastEditTime: 2021-12-27 15:17:05
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\src\xhr.ts
  */
+import cookie from '../helpers/cookie'
 import { createError } from '../helpers/error'
 import { parseHeaders } from '../helpers/headers'
+import { isURLSameOrigin } from '../helpers/url'
 import { isFormData } from '../helpers/util'
 import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types/index'
 
@@ -25,7 +27,9 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
       validateStatus,
       onDownloadProgress,
       onUploadProgress,
-      withCredentials
+      withCredentials,
+      xsrfCookieName,
+      xsrfHeaderName
     } = config
     // console.log('xhr', url, config)
     // 整个流程分为 7 步：
@@ -112,6 +116,13 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
     function processHeaders(): void {
       if (isFormData(data)) {
         delete headers['Content-Type']
+      }
+
+      if ((withCredentials || isURLSameOrigin(url!)) && xsrfCookieName) {
+        const xsrfValue = cookie.read(xsrfCookieName)
+        if (xsrfValue && xsrfHeaderName) {
+          headers[xsrfHeaderName] = xsrfValue
+        }
       }
 
       if (auth) {

@@ -1,7 +1,7 @@
 /*
  * @Author: somours
  * @Date: 2021-12-06 11:53:35
- * @LastEditTime: 2021-12-23 11:10:39
+ * @LastEditTime: 2021-12-27 15:20:30
  * @LastEditors: somours
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \ts-axios2\examples\base\app.ts
@@ -146,22 +146,31 @@ import NProgress from 'nprogress'
 //   }
 // })
 
-document.cookie = 'a=b'
-axios.get('/more/get').then(res => {
-  console.log(res)
+// document.cookie = 'a=b'
+// axios.get('/more/get').then(res => {
+//   console.log(res)
+// })
+
+// axios
+//   .post(
+//     'http://localhost:8088/more/server2',
+//     {},
+//     {
+//       // withCredentials: true
+//     }
+//   )
+//   .then(res => {
+//     console.log(res)
+//   })
+//   .catch(e => {
+//     console.log('error', e)
+//   })
+
+const instance = axios.create({
+  xsrfCookieName: 'XSRF-TOKEN-D',
+  xsrfHeaderName: 'X-XSRF-TOKEN-D'
 })
 
-axios
-  .post(
-    'http://localhost:8088/more/server2',
-    {},
-    {
-      // withCredentials: true
-    }
-  )
-  .then(res => {
-    console.log(res)
-  })
-  .catch(e => {
-    console.log('error', e)
-  })
+instance.get('/more/get').then(res => {
+  console.log(res)
+})
