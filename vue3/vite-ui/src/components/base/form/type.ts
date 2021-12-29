@@ -13,7 +13,7 @@ export interface FormItemConfig {
   render?: Function
   slot?: string
   componentAttrs?: FormItemComponentAttrs // 里面内部的组件的属性
-  formItemAttrs?: Object // el-form-item 的属性
+  formItemAttrs?: object // el-form-item 的属性
   defaultValue?: any // 一些组件的默认值
   dealValueFn?: (value: any) => any // 数据处理函数, 要注意包含了默认值的处理,保持与接口数据统一的处理, 例如: tags: '1,2,3', 处理成[1,2,3], 设置默认值时也应设置","分割的字符串
   getData?: () => FormData
