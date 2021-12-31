@@ -1,15 +1,15 @@
 <template>
 <div class="ellipsis">
-  <template v-if="tableView === tableViewEnums.date">
+  <template v-if="tableView === TableViewsEnum.date">
     {{getDate}}
   </template>
-  <template v-else-if="tableView === tableViewEnums.listText">
+  <template v-else-if="tableView === TableViewsEnum.listText">
     {{getListLabel}}
   </template>
-  <template v-else-if="tableView === tableViewEnums.link">
+  <template v-else-if="tableView === TableViewsEnum.link">
     <el-link type="success" @click="clickLinkFn">{{getLabel}}</el-link>
   </template>
-  <template v-else-if="tableView === tableViewEnums.picture">
+  <template v-else-if="tableView === TableViewsEnum.picture">
     <el-image
       style="width: 26px; height: 26px"
       :src="picturePath"
@@ -29,8 +29,8 @@
 <script lang="ts">
 import {defineComponent, computed} from 'vue'
 import { isFunction, isNull } from '@/utils/basicTools'
-import { getPicturePath, timeFormat } from '@/utils/index'
-import { tableViewEnums } from '@/enums/common'
+import { getPicturePath, timeFormat } from '@/utils/tools'
+import { TableViewsEnum } from '@/enums/common'
 
 export default defineComponent({
   name: 'tableView',
@@ -68,7 +68,7 @@ export default defineComponent({
       getDate,
       getListLabel: 'listLabel',
       getLabel: 'getLabel',
-      tableViewEnums,
+      TableViewsEnum,
       clickLinkFn
     }
   },
@@ -124,7 +124,7 @@ export default defineComponent({
   },
   data () {
     return {
-      tableViewEnums
+      TableViewsEnum
     }
   },
   methods: {
