@@ -28,6 +28,13 @@ const routes = [
     meta: {
       title: '弹窗示例'
     }
+  },
+  {
+    path: '/form',
+    component: () => import('@/views/form/index.vue'),
+    meta: {
+      title: '表单示例'
+    }
   }
 ]
 export const router = createRouter({

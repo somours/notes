@@ -5,6 +5,11 @@
   v-bind="$attrs"
   :model="form"
 >
+  <slot></slot>
+  <slot name="12"></slot>
+  <el-form-item label="测试$slots">
+    {{ $slots }}
+  </el-form-item>
   <el-form-item
     v-for="(i, index) in formItemList"
     v-bind="i.formItemAttrs || {}"

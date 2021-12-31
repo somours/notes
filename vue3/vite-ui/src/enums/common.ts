@@ -1,16 +1,22 @@
 export enum TableViewsEnum {
-  date,
-  picture,
-  link,
-  listText
+  date = 'date',
+  picture = 'picture',
+  link = 'link',
+  listText = 'link'
 }
 
 export enum FormComponentTypesEnum {
-  input,
-  select,
-  datePicker,
-  timePicker,
-  radio,
-  checkbox,
-  upload
+  input = 'input',
+  select = 'select',
+  datePicker = 'datePicker',
+  timePicker = 'timePicker',
+  radio = 'radio',
+  checkbox = 'checkbox',
+  upload = 'upload'
+}
+
+export enum RegValidateEnum {
+  phone = 'phone',
+  number = 'number',
+  email = 'email'
 }

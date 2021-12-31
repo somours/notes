@@ -3,8 +3,7 @@ import {FormComponentTypesEnum} from "@/enums/common";
 export interface FormItemComponentAttrs {
   [propName: string]: any
 }
-
-// todo formItemConfig 的配置类型, 还需要细化每一个字段的描述
+// 外部传入内部的格式需求
 export interface FormItemConfig {
   key: string
   title: string

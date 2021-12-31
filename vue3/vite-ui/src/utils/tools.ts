@@ -1,7 +1,6 @@
 import {globalConfig} from "./config";
 import dayjs from 'dayjs'
 import {isNull} from "./basicTools";
-import placeholder from "lodash/fp/placeholder";
 import {keyOf} from "element-plus/es/utils/props";
 // 处理图片路径
 export const getPicturePath = (str:string) => {
@@ -29,7 +28,7 @@ export const timeFormat = (time: Date, format:string = 'YYYY-MM-DD HH:mm:ss') =>
 *   新的数组 比起arr数组新增或者变更了value,label 选项
 * */
 
-interface ValueLabelConfig {
+interface ValueLabelConfig extends PlainObject{
   value: string
   label: string
   [propName: string]: string
@@ -37,13 +36,13 @@ interface ValueLabelConfig {
 interface PlainObject {
   [propName: string]: any
 }
-export const setListValueLabel = (arr: Array<PlainObject>, config: ValueLabelConfig): Array<PlainObject> => {
+export const setListValueLabel = <T extends PlainObject>(arr: Array<T>, config: ValueLabelConfig): Array<T | T & ValueLabelConfig> => {
   if(arr.length === 0) {
     return arr
   }
   const keys = Object.keys(config)
   let result = arr.map(i => {
-    const tempItem = {...i}
+    const tempItem = Object.create(i)
     keys.forEach(key => {
       tempItem[key] = i[config[key]]
     })
@@ -59,21 +58,12 @@ export const setListValueLabel = (arr: Array<PlainObject>, config: ValueLabelCon
 * placeholder: 占位符,默认 '-', 字符串
 * 返回值: 返回跟数组对象一样的类型, 并新添加属性: configkeys里面的每一个属性值
 * */
-type StringAndNumber = string | number
 interface FilterEnumsParams<T>{
   list: Array<T>
   value: string
   configKeys?:  ValueLabelConfig
   placeholder?: string
 }
-
-type TurnKeys <T> =  T[keyof T]
-
-type UnionValueLabelObject<T,U> = Record<keyof T | keyof U, T[keyof T]>
-  // [p in T | U)]: T[p] | T[U[P]],
-  // [p in keyof T]: T[p]
-  // [k in keyOf U]: T[keyOf TurnKeys<U>]
-
 
 export const filterEnums = <T extends {[propName: string]: any}>(params: FilterEnumsParams<T>): T&ValueLabelConfig => {
   const {list = [], value = '', configKeys = {value: 'value', label: 'label'}, placeholder = '-'} = params
