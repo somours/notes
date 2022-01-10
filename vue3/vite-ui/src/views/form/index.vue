@@ -7,21 +7,25 @@
         </div>
       </template>
       <div>测试</div>
-      <template v-slot:12>
-        <div >我是另一个slot</div>
+      <template v-slot:after>
+        <el-form-item >
+          <el-button @click="startValidateForm">验证表单</el-button>
+          <el-button @click="testCreateVnode">验证Vnode</el-button>
+        </el-form-item>
       </template>
     </Form>
-    <el-button @click="startValidateForm">验证表单</el-button>
   </div>
 </template>
 
 <script lang="ts">
+import Test from './test.vue';
 import Form from '@/components/base/form/index.vue'
 import {FormConfigList} from "@/components/base/form/type";
 import {FormComponentTypesEnum} from "@/enums/common";
-import {defineComponent, reactive, ref} from "vue";
+import {defineComponent, reactive, ref, h} from "vue";
+import { ElNotification } from 'element-plus';
 
-const makeRange = (start, end) => {
+const makeRange = (start: number, end: number) => {
   const result = []
   for (let i = start; i <= end; i++) {
     result.push(i)
@@ -188,7 +192,7 @@ export default defineComponent({
     const validateForm = (params: any) => {
       // console.log('表单验证', params)
     }
-    const testForm = ref(null)
+    const testForm = ref<HTMLFormElement>(null)
     const startValidateForm = () => {
       // const formData = testForm.value.useForm()
       // console.log(formData)
@@ -198,11 +202,22 @@ export default defineComponent({
         console.log('已验证', form)
       })
     }
+    const testCreateVnode = () => {
+      ElNotification({
+        title: 'Title',
+        // message: h('i', { style: 'color: teal' }, 'This is a reminder'),
+        message: h(Test, {
+          text: '我是props 的文字'
+        }),
+        duration: 0
+      })
+    }
     return {
       formList,
       validateForm,
       testForm,
-      startValidateForm
+      startValidateForm,
+      testCreateVnode
     }
   }
 })

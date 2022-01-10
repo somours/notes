@@ -1,4 +1,4 @@
-import {defineComponent,h} from "vue";
+import {defineComponent, h} from "vue";
 
 export default defineComponent({
   name: 'FormItemRender',
@@ -16,6 +16,6 @@ export default defineComponent({
       item: this.$props.item,
       index: this.$props.index,
     }
-    return this.$props.render(h, params)
+    return this.$props.render(h,params)
   }
 })

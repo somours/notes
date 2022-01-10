@@ -5,11 +5,7 @@
   v-bind="$attrs"
   :model="form"
 >
-  <slot></slot>
-  <slot name="12"></slot>
-  <el-form-item label="测试$slots">
-    {{ $slots }}
-  </el-form-item>
+  <slot name="before"></slot>
   <el-form-item
     v-for="(i, index) in formItemList"
     v-bind="i.formItemAttrs || {}"
@@ -31,10 +27,10 @@
     </template>
     <!--  默认情况下使用render组件展示预定义好的组件  -->
     <template v-else>
-    <!--      <FormInput v-model="form[i.key]" v-bind="i.componentAttrs || {}"></FormInput>-->
       <FormRender :form="form" :item="i"></FormRender>
     </template>
   </el-form-item>
+  <slot name="after"></slot>
 </el-form>
 </template>
 
@@ -44,6 +40,8 @@ import FormInput from './form-component/input.vue'
 import RenderFromItem from './renderFormItem'
 import FormRender from './render.vue'
 import {FormItemComponentAttrs, FormItemConfig, FormConfigList, FormData} from './type'
+import type { ElForm } from 'element-plus'
+import {ElFormContext} from "element-plus";
 // import {getDefaultValue, getInitValue} from "@/components/base/form/render";
 
 // 增加一个唯一id
@@ -81,7 +79,7 @@ export default defineComponent({
     // 6 如何处理每一项的form的联动
     const {isEdit,formData, list} = props
     const form = reactive(isEdit ? formData || {} : {})
-    const customFormDom = ref(null)
+    const customFormDom = ref<InstanceType<typeof ElForm>>()
     const formItemList = reactive<Array<FormItemInnerConfig>>([])
     list.forEach((item) => {
       const i = {

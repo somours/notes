@@ -20,3 +20,4 @@ export enum RegValidateEnum {
   number = 'number',
   email = 'email'
 }
+
